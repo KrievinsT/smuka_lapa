@@ -13,7 +13,11 @@ function Contact() {
                 <div className="w-full text-center px-[500px] py-0 mt-[10px]">
                     <h1 className="text-[90px] font-normal leading-none">Let's bring your vision to life</h1>
                 </div>
-                <div></div>
+                <div>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                </div>
             </main>
             <Footer />
         </div>
