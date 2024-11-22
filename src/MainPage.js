@@ -1,6 +1,6 @@
 import './styles/App.css';
-import Header from './header';
-import Footer from './footer';
+import Header from './accesories/header';
+import Footer from './accesories/footer';
 
 function MainPage() {
   return (
