@@ -6,6 +6,7 @@ import Astronaut  from './img/Astronaut.png';
 import DiskPlayer from './img/DiskPlayer.png';
 import PurpleTape from './img/PurpleTape.png';
 import SportsCar from './img/SportsCar.png';
+import BlackGuy from './img/BlackGuy.png';
 
 function MainPage() {
   return (
@@ -181,7 +182,27 @@ function MainPage() {
           </div>
           <div className="flex justify-center mt-[80px]">
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left " />
-            <div className="bg-[white] w-[58%] h-[400px] rounded-[14px]"></div>
+            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] shadow-[50px] flex">
+              <div >
+                <img className=" h-[353px] w-[515px] mt-[30px] ml-[30px] rounded-[10px]" src={BlackGuy } alt="BlackGuy " />
+              </div>
+              <div className="pl-[70px] pt-[60px] pr-[50px]">
+                <p className="text-[27px]">Their ability to translate abstract concepts into visually stunning representations is nothing short of exceptional</p>
+                <div className="flex mt-[110px]">
+                  <div className="w-[200px]">
+                    <p className="text-[27px]">James Wilson</p>
+                    <p className="text-[gray] text-[18px]">Operations Manager</p>
+                  </div>
+                  <div className="flex ml-[320px]">
+                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                  </div>
+                </div>
+              </div>
+            </div>
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] ml-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbf7_Right%20Slider%20Arrow.svg" alt="Arrow_right " />   
           </div>
         </div>
