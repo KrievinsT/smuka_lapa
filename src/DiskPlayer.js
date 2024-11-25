@@ -41,8 +41,8 @@ function DiskPlayer() {
                     <p className="text-center text-[160%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
                 <div>
-                    <img className="w-[80%] ml-[17%] mt-[100px] object-cover object-center h-[720px] w-[660px]" src={DiskPlayer_6 } alt="DiskPlayer_6 " />
-                    <img className="w-[80%] ml-[45%] mt-[100px] object-cover object-center h-[720px] w-[660px]" src={DiskPlayer_7 } alt="DiskPlayer_7 " />
+                    <img className="ml-[280px] mt-[100px] object-cover object-center h-[720px] w-[660px]" src={DiskPlayer_6 } alt="DiskPlayer_6 " />
+                    <img className="ml-[45%] mt-[100px] object-cover object-center h-[720px] w-[660px]" src={DiskPlayer_7 } alt="DiskPlayer_7 " />
                 </div>
                 <div className="pr-[28%] pl-[28%] mt-[100px]">
                     <p className="text-center text-[160%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>

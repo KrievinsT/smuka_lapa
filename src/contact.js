@@ -1,37 +1,11 @@
-import React, { useEffect, useRef } from 'react';
 import Header from './accesories/header';
 import Footer from './accesories/footer';
 
 function Contact() {
-    
-    const mainRef = useRef(null); // Create a reference to the main section
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeSlideUp');
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
-        );
-
-        // Observe the target element
-        if (mainRef.current) {
-            observer.observe(mainRef.current);
-        }
-
-        return () => {
-            if (mainRef.current) observer.unobserve(mainRef.current);
-        };
-    }, []);
-
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1 opacity-0" ref={mainRef}>
+            <main className="flex-1">
                 <div className="flex justify-center">
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
                     <h2 className="text-center mt-[20px]">AVAILABLE FOR WORK</h2>
@@ -40,7 +14,7 @@ function Contact() {
                 <div className="w-full text-center px-[500px] py-0 mt-[10px]">
                     <h1 className="text-[90px] font-normal leading-none">Let's bring your vision to life</h1>
                 </div>
-                <div className="mt-[150px] flex justify-center flex-wrap animate-fadeSlideUp delay-300">
+                <div className="mt-[150px] flex justify-center flex-wrap">
                     <form className="flex flex-col items-center w-[90%] max-w-[500px] mb-[50px]">
                         <label htmlFor="name" className="w-[560px] text-[#151515] text-left">Name</label>
                         <input
