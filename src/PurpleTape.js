@@ -1,5 +1,6 @@
 import Header from './accesories/header';
 import Footer from './accesories/footer';
+import React, { useEffect, useRef } from 'react';
 import PurpleTape_2  from './img/PurpleTape_2.png';
 import PurpleTape_3  from './img/PurpleTape_3.png';
 import PurpleTape_4  from './img/PurpleTape_4.png';
@@ -9,16 +10,45 @@ import PurpleTape_7  from './img/PurpleTape_7.png';
 import PurpleTape_8  from './img/PurpleTape_8.png';
 
 function PurpleTape() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const mainRef = useRef(null); // Create a reference to the main section
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeSlideUp');
+                    }
+                });
+            },
+            { threshold: 0.1 } // Trigger when 10% of the element is visible
+        );
+  
+        // Observe the target element
+        if (mainRef.current) {
+            observer.observe(mainRef.current);
+        }
+  
+        return () => {
+            if (mainRef.current) observer.unobserve(mainRef.current);
+        };
+    }, []);
+
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">
-                <div className="flex justify-center">
+                <div className="flex justify-center opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
                     <h2 className="text-center mt-[20px]">PUBLISHED - OCTOBER 1, 2024</h2>
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
                 </div>
-                <div className="w-full text-center px-[40%] py-0 mt-[10px]">
+                <div className="w-full text-center px-[40%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
                     <h1 className="text-[90px] font-normal leading-none">Steezy</h1>
                 </div>
                 <div>

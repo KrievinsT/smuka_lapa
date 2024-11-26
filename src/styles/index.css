@@ -27,3 +27,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite; /* 10 seconds per loop, smooth and infinite */
+}

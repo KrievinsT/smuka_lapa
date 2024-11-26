@@ -1,9 +1,35 @@
+import React, { useEffect, useRef } from 'react';
 import logo from '../img/logo.png';
 
 function Footer() {
+
+  const mainRef = useRef(null); // Create a reference to the main section
+
+  useEffect(() => {
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('animate-fadeSlideUp');
+                  }
+              });
+          },
+          { threshold: 0.1 } // Trigger when 10% of the element is visible
+      );
+
+      // Observe the target element
+      if (mainRef.current) {
+          observer.observe(mainRef.current);
+      }
+
+      return () => {
+          if (mainRef.current) observer.unobserve(mainRef.current);
+      };
+  }, []);
+
   return (
     <div>
-      <footer className="w-full pt-[160px] px-[0] pb-[48px] h-auto flex justify-center flex-wrap">
+      <footer className="w-full pt-[160px] px-[0] pb-[48px] h-auto flex justify-center flex-wrap opacity-0" ref={mainRef}>
         <div className="w-full flex justify-center"><img src={logo} alt="Logo" /></div>
         <div className="flex justify-center mt-[50px] space-x-[30px]">
             <div className="rounded-[50%] transition-all duration-400 cursor-pointer hover:bg-[#ee64ff] hover:mt-[-1px]"> <img className=" w-[42px] h-[42px] p-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c6a83a9b7ca7d4b83724_Vector.svg" alt="Twitter " /> </div>

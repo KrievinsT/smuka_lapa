@@ -4,6 +4,10 @@ import Footer from './accesories/footer';
 
 function Contact() {
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const mainRef = useRef(null); // Create a reference to the main section
 
     useEffect(() => {
@@ -37,7 +41,7 @@ function Contact() {
                     <h2 className="text-center mt-[20px]">AVAILABLE FOR WORK</h2>
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
                 </div>
-                <div className="w-full text-center px-[500px] py-0 mt-[10px]">
+                <div className="w-full text-center px-[450px] py-0 mt-[10px]">
                     <h1 className="text-[90px] font-normal leading-none">Let's bring your vision to life</h1>
                 </div>
                 <div className="mt-[150px] flex justify-center flex-wrap animate-fadeSlideUp delay-300">
@@ -46,7 +50,7 @@ function Contact() {
                         <input
                             id="name"
                             placeholder="Enter your name"
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-none border-b-2 border-gray-400 transition-all duration-400  hover:pl-[21px] hover:border-[1px] hover:border-[solid] hover:border-[#525252] focus:outline-none focus:border-[#000000] "
+                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)] focus:outline-none focus:border-[#000000] "
                             required
                         />
                         <label htmlFor="email" className="w-[560px] text-[#151515] text-left mt-[26px]">E-mail</label>
@@ -54,14 +58,14 @@ function Contact() {
                             type="email"
                             id="email"
                             placeholder="Enter your e-mail"
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-none border-b-2 border-gray-400 transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none"
+                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         />
                         <label htmlFor="message" className="w-[560px] text-[#151515] text-left mt-[26px]">Message</label>
                         <textarea
                             id="message"
                             placeholder="Your message..."
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] pt-[20px] w-[560px] h-[100px] border-none border-b-2 border-gray-400 transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none"
+                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] pt-[20px] w-[560px] h-[100px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         ></textarea>
                         <button

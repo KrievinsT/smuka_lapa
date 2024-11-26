@@ -1,4 +1,5 @@
 import './styles/App.css';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './accesories/header';
 import Footer from './accesories/footer';
 import { Link } from 'react-router-dom';
@@ -9,32 +10,130 @@ import SportsCar from './img/SportsCar.png';
 import BlackGuy from './img/BlackGuy.png';
 
 function MainPage() {
+
+  const mainRef = useRef(null); // Create a reference to the main section
+
+  useEffect(() => {
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('animate-fadeSlideUpShort');
+                  }
+              });
+          },
+          { threshold: 0.1 } // Trigger when 10% of the element is visible
+      );
+
+      // Observe the target element
+      if (mainRef.current) {
+          observer.observe(mainRef.current);
+      }
+
+      return () => {
+          if (mainRef.current) observer.unobserve(mainRef.current);
+      };
+  }, []);
+
+  const testimonials = [
+    {
+      image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c160db3c3c74e3cddc55_Testimonial%20Image%2003.jpg',
+      text: 'Their ability to translate abstract concepts into visually stunning representations is nothing short of exceptional',
+      name: 'James Wilson',
+      title: 'Operations Manager',
+    },
+    {
+      image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddb45_Testimonial%20Slider%20Image.jpg',
+      text: 'The design prowess of Sandbox is truly remarkable. Their ability to translate abstract concepts into visually stunning representations is nothing short of exceptional.',
+      name: 'Alex Johnson',
+      title: 'CTO at TechInnovate',
+    },
+    {
+      image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddc2b_Testimonial%20Image%2001.jpg',
+      text: 'They are a creative force to reckon with. Their innovative ideas and exceptional design sense set them apart in the industry',
+      name: 'Michael Lee',
+      title: 'Customer Experience Lead',
+    },
+    {
+      image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c160db3c3c74e3cddc41_Testimonial%20Image%2002.jpg',
+      text: 'Their comprehensive understanding of our brands essence and target market helped us define and refine our identity.',
+      name: 'John Thompson',
+      title: 'Product Manager',
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+  const [isEntering, setIsEntering] = useState(false);
+
+  const handleNext = () => {
+    setIsExiting(true); // Trigger exit animation
+    setTimeout(() => {
+      setIsExiting(false);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      setIsEntering(true); // Trigger enter animation
+      setTimeout(() => setIsEntering(false), 500); // Match animation duration
+    }, 500); // Match animation duration
+  };
+
+  const handlePrev = () => {
+    setIsExiting(true); // Trigger exit animation
+    setTimeout(() => {
+      setIsExiting(false);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      );
+      setIsEntering(true); // Trigger enter animation
+      setTimeout(() => setIsEntering(false), 500); // Match animation duration
+    }, 500); // Match animation duration
+  };
+
+  // Automatic change logic
+  useEffect(() => {
+    const interval = setInterval(handleNext, 5000); // Change every 5 seconds
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
     <div>
       <Header />
       <main className="bg-[#efefef]">
-        <div className="flex justify-center">
+        <div className="flex justify-center opacity-0 animate-fadeSlideUp" ref={mainRef}>
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
             <h2 className="text-center mt-[20px]">WE ARE SANDBOX</h2>
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
         </div>
-        <div className="w-full text-center px-[380px] py-0 mt-[10px]">
-            <h1 className="text-[90px] font-normal leading-none">Elevate your brand with creative solutions</h1>
+        <div className="w-full text-center px-[360px] py-0 mt-[10px] opacity-0 animate-fadeSlideUp" ref={mainRef}>
+            <h1 className="text-[90px] leading-none">Elevate your brand with creative solutions</h1>
+        </div>
+        <div className="flex pl-[70px] mt-[120px]">
+          <div className="w-[270px]">
+            <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
+          </div>
+          <div className="text-right">
+            <a className="text-[18px]">contact@sandbox.com</a>
+          </div>
         </div>
         <div>
-
+          <div className="flex">
+            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
+            <p className="text-[100px]">CREATIVE AGENCY</p>
+            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
+          </div>
         </div>
         <div>
-          <h2 className="text-center text-[60px] font-normal leading-none">
-            Elevate your digital<img className="w-[100px] rounded-[50px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
+          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none">
+            Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
-            <span></span>
+            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
             designers and development trailblazers ignites your 
-            <span></span> 
+            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24c9b_Text%20Images%2003.jpg" alt="astronaut " />
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[60px] ml-[375px]">
+        <div className="flex mt-[140px] ml-[375px]">
           <div className="font-normal leading-none">
             <p className="text-[90px]">3+</p>
             <p className="text-[20px] text-[rgb(82,_82,_82)]">Years of experiance</p>
@@ -49,7 +148,7 @@ function MainPage() {
           </div>
         </div>
         <div>
-          <div className="flex mt-[120px]">
+          <div className="flex mt-[140px]">
             <div className="bg-[white] w-[28.5%] h-[600px] ml-[5.5%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Transform your business identity through expert branding strategies</h2>
@@ -90,7 +189,7 @@ function MainPage() {
                     <div className="flex mt-[100px] w-[100%]">
                         <Link to="/Astronaut" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px]" src={Astronaut } alt="Astronaut " /></div>
+                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={Astronaut } alt="Astronaut " /></div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -105,7 +204,7 @@ function MainPage() {
                         </Link>
                         <Link to="/SportsCar" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px]" src={SportsCar } alt="SportsCar " /></div>
+                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={SportsCar } alt="SportsCar " /></div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -122,7 +221,7 @@ function MainPage() {
                     <div className="flex mt-[50px]">
                         <Link to="/PurpleTape" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px]" src={PurpleTape } alt="PurpleTape " /></div>
+                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={PurpleTape } alt="PurpleTape " /></div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -137,7 +236,7 @@ function MainPage() {
                         </Link>
                         <Link to="/DiskPlayer" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px]" src={DiskPlayer } alt="DiskPlayer " /></div>
+                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={DiskPlayer } alt="DiskPlayer " /></div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -181,29 +280,35 @@ function MainPage() {
             <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
           </div>
           <div className="flex justify-center mt-[80px]">
-            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left " />
+            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
+            src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left "
+            onClick={handlePrev} />
             <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] shadow-[50px] flex">
-              <div >
-                <img className=" h-[353px] w-[515px] mt-[30px] ml-[30px] rounded-[10px]" src={BlackGuy } alt="BlackGuy " />
+              <div className={`${isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
+                <img className=" h-[353px] w-[255px] mt-[30px] ml-[30px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
               </div>
-              <div className="pl-[70px] pt-[60px] pr-[50px]">
-                <p className="text-[27px]">Their ability to translate abstract concepts into visually stunning representations is nothing short of exceptional</p>
+              <div className="pl-[35px] pt-[60px] w-[650px]">
+                <div  className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
+                  <p className="text-[27px] h-[125px]">{currentTestimonial.text}</p>
+                </div>
                 <div className="flex mt-[110px]">
-                  <div className="w-[200px]">
-                    <p className="text-[27px]">James Wilson</p>
-                    <p className="text-[gray] text-[18px]">Operations Manager</p>
+                  <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
+                    <p className="text-[27px] w-[300px]">{currentTestimonial.name}</p>
+                    <p className="text-[gray] text-[18px] w-[300px]">{currentTestimonial.title}</p>
                   </div>
-                  <div className="flex ml-[320px]">
-                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
-                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
-                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
-                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
-                    <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                  <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
+                    <div className="flex ml-[200px] mt-[20px]">
+                      <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                      <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                      <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                      <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                      <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] ml-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbf7_Right%20Slider%20Arrow.svg" alt="Arrow_right " />   
+            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] ml-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbf7_Right%20Slider%20Arrow.svg" alt="Arrow_right "  onClick={handleNext}/>   
           </div>
         </div>
       </main>
