@@ -40,3 +40,17 @@ code {
 .animate-marquee {
   animation: marquee 20s linear infinite; /* 10 seconds per loop, smooth and infinite */
 }
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}

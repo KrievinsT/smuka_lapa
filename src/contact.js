@@ -35,14 +35,14 @@ function Contact() {
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1 opacity-0" ref={mainRef}>
+            <main className="flex-1 opacity-0 opacity-0 animate-fadeSlideUp delay-300">
                 <div className="flex justify-center">
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
-                    <h2 className="text-center mt-[20px]">AVAILABLE FOR WORK</h2>
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
+                    <h2 className="text-center mt-[1.2%] text-[115%]">AVAILABLE FOR WORK</h2>
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
                 </div>
-                <div className="w-full text-center px-[450px] py-0 mt-[10px]">
-                    <h1 className="text-[90px] font-normal leading-none">Let's bring your vision to life</h1>
+                <div className="w-full text-center px-[25%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+                    <h1 className="text-[570%] font-normal leading-none">Let's bring your vision to life</h1>
                 </div>
                 <div className="mt-[150px] flex justify-center flex-wrap animate-fadeSlideUp delay-300">
                     <form className="flex flex-col items-center w-[90%] max-w-[500px] mb-[50px]">

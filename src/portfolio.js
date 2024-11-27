@@ -1,6 +1,6 @@
 import Header from './accesories/header';
 import Footer from './accesories/footer';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Astronaut  from './img/Astronaut.png';
 import DiskPlayer from './img/DiskPlayer.png';
@@ -8,6 +8,8 @@ import PurpleTape from './img/PurpleTape.png';
 import SportsCar from './img/SportsCar.png';
 
 function Portfolio() {
+
+    
 
     const mainRef = useRef(null); // Create a reference to the main section
 
@@ -37,19 +39,24 @@ function Portfolio() {
         <div>
             <Header />
             <main>
-                <div className="flex justify-center opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
-                    <h2 className="text-center mt-[20px]">WE ARE SANDBOX</h2>
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
+                <div className="flex justify-center opacity-0 animate-fadeSlideUp delay-300">
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
+                    <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
                 </div>
-                <div className="w-full text-center px-[480px] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
-                    <h1 className="text-[90px] leading-none">Where vision meets excellence</h1>
+                <div className="w-full text-center px-[28%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+                    <h1 className="text-[570%] leading-none">Where vision meets excellence</h1>
                 </div>
                 <div>
                     <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300 " ref={mainRef}>
                         <Link to="/Astronaut" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={Astronaut } alt="Astronaut " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={Astronaut } alt="Astronaut " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -64,7 +71,12 @@ function Portfolio() {
                         </Link>
                         <Link to="/SportsCar" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={SportsCar } alt="SportsCar " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={SportsCar } alt="SportsCar " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -81,7 +93,12 @@ function Portfolio() {
                     <div className="flex mt-[50px] opacity-0" ref={mainRef}>
                         <Link to="/PurpleTape" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={PurpleTape } alt="PurpleTape " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={PurpleTape } alt="PurpleTape " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -96,7 +113,12 @@ function Portfolio() {
                         </Link>
                         <Link to="/DiskPlayer" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={DiskPlayer } alt="DiskPlayer " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={DiskPlayer } alt="DiskPlayer " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">

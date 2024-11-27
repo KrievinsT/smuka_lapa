@@ -1,5 +1,5 @@
 import './styles/App.css';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Header from './accesories/header';
 import Footer from './accesories/footer';
 import { Link } from 'react-router-dom';
@@ -7,33 +7,92 @@ import Astronaut  from './img/Astronaut.png';
 import DiskPlayer from './img/DiskPlayer.png';
 import PurpleTape from './img/PurpleTape.png';
 import SportsCar from './img/SportsCar.png';
-import BlackGuy from './img/BlackGuy.png';
+
+const useIntersectionObserver = (callback, options) => {
+  const observerRef = useRef(null);
+
+  const observe = useCallback(
+    (element) => {
+      if (!element) return;
+
+      // Create observer if it doesn't exist
+      if (!observerRef.current) {
+        observerRef.current = new IntersectionObserver(callback, options);
+      }
+
+      observerRef.current.observe(element);
+
+      return () => {
+        observerRef.current?.unobserve(element);
+      };
+    },
+    [callback, options]
+  );
+
+  useEffect(() => {
+    return () => {
+      // Disconnect observer on cleanup
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
+  return observe;
+};
 
 function MainPage() {
 
-  const mainRef = useRef(null); // Create a reference to the main section
+  useEffect(() => {
+    const elements = document.querySelectorAll('.animate-fadeSlideUp, .animate-fadeSlideUpShort');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Add a class when visible
+            observer.unobserve(entry.target); // Stop observing once the animation is applied
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+  const mainRef = useRef(null); // Create a reference for the main section
+
+  // Intersection Observer logic encapsulated in useCallback
+  const observeElement = useCallback((element) => {
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeSlideUp');
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect(); // Cleanup observer when the component unmounts
+    };
+  }, []);
 
   useEffect(() => {
-      const observer = new IntersectionObserver(
-          (entries) => {
-              entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                      entry.target.classList.add('animate-fadeSlideUpShort');
-                  }
-              });
-          },
-          { threshold: 0.1 } // Trigger when 10% of the element is visible
-      );
+    if (mainRef.current) {
+      const cleanupObserver = observeElement(mainRef.current);
 
-      // Observe the target element
-      if (mainRef.current) {
-          observer.observe(mainRef.current);
-      }
-
-      return () => {
-          if (mainRef.current) observer.unobserve(mainRef.current);
-      };
-  }, []);
+      // Cleanup on unmount
+      return cleanupObserver;
+    }
+  }, [observeElement]);
 
   const testimonials = [
     {
@@ -65,6 +124,7 @@ function MainPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [isEntering, setIsEntering] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleNext = () => {
     setIsExiting(true); // Trigger exit animation
@@ -100,31 +160,33 @@ function MainPage() {
     <div>
       <Header />
       <main className="bg-[#efefef]">
-        <div className="flex justify-center opacity-0 animate-fadeSlideUp" ref={mainRef}>
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
-            <h2 className="text-center mt-[20px]">WE ARE SANDBOX</h2>
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
+        <div className="flex justify-center opacity-0 animate-fadeSlideUpShort delay-300">
+            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
+            <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
+            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
         </div>
-        <div className="w-full text-center px-[360px] py-0 mt-[10px] opacity-0 animate-fadeSlideUp" ref={mainRef}>
-            <h1 className="text-[90px] leading-none">Elevate your brand with creative solutions</h1>
+        <div className="w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+            <h1 className="text-[570%] leading-none">Elevate your brand with creative solutions</h1>
         </div>
         <div className="flex pl-[70px] mt-[120px]">
           <div className="w-[270px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="text-right">
+          <div className="ml-[1080px]">
             <a className="text-[18px]">contact@sandbox.com</a>
           </div>
         </div>
-        <div>
-          <div className="flex">
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] mr-[12px]"></div>
-            <p className="text-[100px]">CREATIVE AGENCY</p>
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[28px] ml-[12px]"></div>
+        <div className="relative overflow-x-hidden h-[300px] flex">
+          <div className="animate-marquee flex items-center justify-start ">
+            <p className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</p>
+            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
+            <p className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</p>
+            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
           </div>
         </div>
+        
         <div>
-          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none">
+          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef}>
             Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
             <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
@@ -181,15 +243,20 @@ function MainPage() {
         </div>
         <div>
           <div>
-            <div className="mt-[220px] text-center">
+            <div className="mt-[220px] text-center" >
               <h2 className="text-[60px] font-bold px-[530px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
               <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
             </div>
             <div className="p-[0]">
-                    <div className="flex mt-[100px] w-[100%]">
+                    <div className="flex mt-[100px] w-[100%]" >
                         <Link to="/Astronaut" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={Astronaut } alt="Astronaut " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={Astronaut } alt="Astronaut " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -204,7 +271,12 @@ function MainPage() {
                         </Link>
                         <Link to="/SportsCar" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={SportsCar } alt="SportsCar " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={SportsCar } alt="SportsCar " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -221,7 +293,12 @@ function MainPage() {
                     <div className="flex mt-[50px]">
                         <Link to="/PurpleTape" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={PurpleTape } alt="PurpleTape " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={PurpleTape } alt="PurpleTape " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -236,7 +313,12 @@ function MainPage() {
                         </Link>
                         <Link to="/DiskPlayer" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden"><img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 hover:scale-110" src={DiskPlayer } alt="DiskPlayer " /></div>
+                                <div className="overflow-hidden relative group">
+                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={DiskPlayer } alt="DiskPlayer " />
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="pl-[30px] pt-[20px] flex">
                                         <div className="w-[30%]">
@@ -283,7 +365,7 @@ function MainPage() {
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
             src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left "
             onClick={handlePrev} />
-            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] shadow-[50px] flex">
+            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] overflow-hidden image-container relative shadow-[50px] flex">
               <div className={`${isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                 <img className=" h-[353px] w-[255px] mt-[30px] ml-[30px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
               </div>

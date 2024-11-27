@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", 
   ],
+  safelist: ['animate-fadeIn', 'opacity-0'],
   theme: {
     extend: {
       keyframes: {
@@ -23,12 +24,44 @@ module.exports = {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        slideDownAndFadeOut: {
+          '0%': { transform: 'translateY(0%)', opacity: '1' },
+          '80%': { transform: 'translateY(100%)', opacity: '1' },
+          '100%': { transform: 'translateY(100%)', opacity: '0' },
+          
+        },
+        slide: {
+          '0%': { transform: 'translateX(100%)' },
+          '50%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        growIn: {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation: {
         fadeSlideUp: 'fadeSlideUp 1s ease-out forwards',
         fadeSlideUpShort: 'fadeSlideUp 0.5s ease-out forwards',
         slideUpFade: 'slideUpFade 0.5s ease-in-out',
         slideInFade: 'slideInFade 0.5s ease-in-out',
+        slideDownAndFadeOut: 'slideDownAndFadeOut 0.3s ease-out forwards',
+        fadeIn: 'fadeIn 0.3s ease-out forwards',
+        grow: 'growIn 0.5s ease-out forwards',
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
       },
     },
   },
