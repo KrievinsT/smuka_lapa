@@ -41,28 +41,48 @@ const useIntersectionObserver = (callback, options) => {
 
 function MainPage() {
 
-  useEffect(() => {
-    const elements = document.querySelectorAll('.animate-fadeSlideUp, .animate-fadeSlideUpShort');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Add a class when visible
-            observer.unobserve(entry.target); // Stop observing once the animation is applied
-          }
+  const mainRef1 = useRef(null);
+  const mainRef2 = useRef(null);
+  const mainRef3 = useRef(null);
+  const mainRef4 = useRef(null);
+  const mainRef5 = useRef(null);
+  const mainRef6 = useRef(null);
+  const mainRef7 = useRef(null);
+  const mainRef8 = useRef(null);
+  const mainRef9 = useRef(null);
+  const mainRef10 = useRef(null);
+  const mainRef11 = useRef(null);
+  const mainRef12 = useRef(null);
+  const mainRef13 = useRef(null);
+  const mainRef14 = useRef(null);
+  const mainRef15 = useRef(null);
+  const mainRef16 = useRef(null);
+  const mainRef17 = useRef(null);
+  const mainRef18 = useRef(null);
+  const mainRef19 = useRef(null);
+
+  const [offset1, setOffset1] = useState({ x: 0, y: 0 });
+    const [offset2, setOffset2] = useState({ x: 0, y: 0 });
+    const [offset3, setOffset3] = useState({ x: 0, y: 0 });
+    const [offset4, setOffset4] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e, setOffset) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Limit movement to within 20px
+        setOffset({
+            x: Math.min(20, Math.max(-20, x / 15)),
+            y: Math.min(20, Math.max(-20, y / 15)),
         });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
-  const mainRef = useRef(null); // Create a reference for the main section
 
+    const handleMouseLeave = (setOffset) => {
+        setOffset({ x: 0, y: 0 });
+    };
+
+    
   // Intersection Observer logic encapsulated in useCallback
   const observeElement = useCallback((element) => {
     if (!element) return;
@@ -86,14 +106,137 @@ function MainPage() {
   }, []);
 
   useEffect(() => {
-    if (mainRef.current) {
-      const cleanupObserver = observeElement(mainRef.current);
-
-      // Cleanup on unmount
-      return cleanupObserver;
+    if (mainRef1.current) {
+      const cleanupObserver1 = observeElement(mainRef1.current);
+      return cleanupObserver1;
     }
   }, [observeElement]);
 
+  useEffect(() => {
+    if (mainRef2.current) {
+      const cleanupObserver2 = observeElement(mainRef2.current);
+      return cleanupObserver2;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef3.current) {
+      const cleanupObserver3 = observeElement(mainRef3.current);
+      return cleanupObserver3;
+    }
+  }, [observeElement]);
+  
+  useEffect(() => {
+    if (mainRef4.current) {
+      const cleanupObserver4 = observeElement(mainRef4.current);
+      return cleanupObserver4;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef5.current) {
+      const cleanupObserver5 = observeElement(mainRef5.current);
+      return cleanupObserver5;
+    }
+  }, [observeElement]);
+  
+  useEffect(() => {
+    if (mainRef6.current) {
+      const cleanupObserver6 = observeElement(mainRef6.current);
+      return cleanupObserver6;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef7.current) {
+      const cleanupObserver7 = observeElement(mainRef7.current);
+      return cleanupObserver7;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef8.current) {
+      const cleanupObserver8 = observeElement(mainRef8.current);
+      return cleanupObserver8;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef9.current) {
+      const cleanupObserver9 = observeElement(mainRef9.current);
+      return cleanupObserver9;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef10.current) {
+      const cleanupObserver10 = observeElement(mainRef10.current);
+      return cleanupObserver10;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef11.current) {
+      const cleanupObserver11 = observeElement(mainRef11.current);
+      return cleanupObserver11;
+    }
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef12.current) {
+      const cleanupObserver12 = observeElement(mainRef12.current);
+      return cleanupObserver12;
+    }
+  }, [observeElement]);  
+
+  useEffect(() => {
+    if (mainRef13.current) {
+      const cleanupObserver13 = observeElement(mainRef13.current);
+      return cleanupObserver13;
+    }
+  }, [observeElement]);  
+
+  useEffect(() => {
+    if (mainRef14.current) {
+      const cleanupObserver14 = observeElement(mainRef14.current);
+      return cleanupObserver14;
+    }
+  }, [observeElement]);  
+
+  useEffect(() => {
+    if (mainRef15.current) {
+      const cleanupObserver15 = observeElement(mainRef15.current);
+      return cleanupObserver15;
+    }
+  }, [observeElement]);  
+
+  useEffect(() => {
+    if (mainRef16.current) {
+      const cleanupObserver16 = observeElement(mainRef16.current);
+      return cleanupObserver16;
+    }
+  }, [observeElement]); 
+
+  useEffect(() => {
+    if (mainRef17.current) {
+      const cleanupObserver17 = observeElement(mainRef17.current);
+      return cleanupObserver17;
+    }
+  }, [observeElement]); 
+
+  useEffect(() => {
+    if (mainRef18.current) {
+      const cleanupObserver18 = observeElement(mainRef18.current);
+      return cleanupObserver18;
+    }
+  }, [observeElement]); 
+
+  useEffect(() => {
+    if (mainRef19.current) {
+      const cleanupObserver19 = observeElement(mainRef19.current);
+      return cleanupObserver19;
+    }
+  }, [observeElement]);
   const testimonials = [
     {
       image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c160db3c3c74e3cddc55_Testimonial%20Image%2003.jpg',
@@ -121,40 +264,41 @@ function MainPage() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isExiting, setIsExiting] = useState(false);
-  const [isEntering, setIsEntering] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleNext = () => {
-    setIsExiting(true); // Trigger exit animation
-    setTimeout(() => {
-      setIsExiting(false);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      setIsEntering(true); // Trigger enter animation
-      setTimeout(() => setIsEntering(false), 500); // Match animation duration
-    }, 500); // Match animation duration
-  };
-
-  const handlePrev = () => {
-    setIsExiting(true); // Trigger exit animation
-    setTimeout(() => {
-      setIsExiting(false);
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-      );
-      setIsEntering(true); // Trigger enter animation
-      setTimeout(() => setIsEntering(false), 500); // Match animation duration
-    }, 500); // Match animation duration
-  };
-
-  // Automatic change logic
-  useEffect(() => {
-    const interval = setInterval(handleNext, 5000); // Change every 5 seconds
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
-
-  const currentTestimonial = testimonials[currentIndex];
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isExiting, setIsExiting] = useState(false);
+    const [isEntering, setIsEntering] = useState(false);
+  
+    const handleNext = () => {
+      setIsExiting(true);
+      setTimeout(() => {
+        setIsExiting(false);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        setIsEntering(true);
+        setTimeout(() => setIsEntering(false), 500);
+      }, 500);
+    };
+  
+    const handlePrev = () => {
+      setIsExiting(true);
+      setTimeout(() => {
+        setIsExiting(false);
+        setCurrentIndex((prevIndex) =>
+          prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+        );
+        setIsEntering(true);
+        setTimeout(() => setIsEntering(false), 500);
+      }, 500);
+    };
+  
+    // Automatic change logic with interval reset
+    useEffect(() => {
+      const interval = setInterval(handleNext, 5000); // Change every 5 seconds
+  
+      // Clear the interval when the component unmounts or when currentIndex changes
+      return () => clearInterval(interval);
+    }, [currentIndex]); // Depend on currentIndex, so it resets on each change
+  
+    const currentTestimonial = testimonials[currentIndex];
 
   return (
     <div>
@@ -186,7 +330,7 @@ function MainPage() {
         </div>
         
         <div>
-          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef}>
+          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
             Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
             <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
@@ -195,7 +339,7 @@ function MainPage() {
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[140px] ml-[375px]">
+        <div className="flex mt-[140px] ml-[375px] opacity-0" ref={mainRef2}>
           <div className="font-normal leading-none">
             <p className="text-[90px]">3+</p>
             <p className="text-[20px] text-[rgb(82,_82,_82)]">Years of experiance</p>
@@ -210,7 +354,7 @@ function MainPage() {
           </div>
         </div>
         <div>
-          <div className="flex mt-[140px]">
+          <div className="flex mt-[140px] opacity-0" ref={mainRef3}>
             <div className="bg-[white] w-[28.5%] h-[600px] ml-[5.5%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Transform your business identity through expert branding strategies</h2>
@@ -243,90 +387,152 @@ function MainPage() {
         </div>
         <div>
           <div>
-            <div className="mt-[220px] text-center" >
+            <div className="mt-[220px] text-center opacity-0" ref={mainRef4}>
               <h2 className="text-[60px] font-bold px-[530px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
               <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
             </div>
             <div className="p-[0]">
-                    <div className="flex mt-[100px] w-[100%]" >
-                        <Link to="/Astronaut" className="w-[49%]">
+                    <div className="flex mt-[100px] w-[100%] opacity-0" ref={mainRef5}>
+                    <Link to="/Astronaut" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden relative group">
-                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={Astronaut } alt="Astronaut " />
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                <div
+                                    className="overflow-hidden relative group"
+                                    onMouseMove={(e) => handleMouseMove(e, setOffset1)}
+                                    onMouseLeave={() => handleMouseLeave(setOffset1)}
+                                >
+                                    <img
+                                        className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110"
+                                        src={Astronaut}
+                                        alt="Astronaut"
+                                    />
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                                        style={{
+                                            transform: `translate(${offset1.x}px, ${offset1.y}px)`,
+                                        }}
+                                    >
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                            <p className="font-bold">View Project</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="pl-[30px] pt-[20px] flex">
-                                        <div className="w-[30%]">
-                                            <p className="text-[19px]">GRO-OP</p>
-                                        </div>
-                                        <div className="w-[50%] ml-[15%]">
-                                            <p className="text-[16px] text-[gray]">Focused on sustainable growth strategies, empowering businesses to thrive through innovation.</p>
-                                        </div>
+                                <div className="pl-[30px] pt-[20px] flex">
+                                    <div className="w-[30%]">
+                                        <p className="text-[19px]">GRO-OP</p>
+                                    </div>
+                                    <div className="w-[50%] ml-[15%]">
+                                        <p className="text-[16px] text-[gray]">
+                                            Focused on sustainable growth strategies, empowering businesses to thrive through innovation.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </Link>
+
                         <Link to="/SportsCar" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden relative group">
-                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={SportsCar } alt="SportsCar " />
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                <div
+                                    className="overflow-hidden relative group"
+                                    onMouseMove={(e) => handleMouseMove(e, setOffset2)}
+                                    onMouseLeave={() => handleMouseLeave(setOffset2)}
+                                >
+                                    <img
+                                        className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110"
+                                        src={SportsCar}
+                                        alt="SportsCar"
+                                    />
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                                        style={{
+                                            transform: `translate(${offset2.x}px, ${offset2.y}px)`,
+                                        }}
+                                    >
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                            <p className="font-bold">View Project</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="pl-[30px] pt-[20px] flex">
-                                        <div className="w-[30%]">
-                                            <p className="text-[19px]">Journey of Objects</p>
-                                        </div>
-                                        <div className="w-[50%] ml-[15%]">
-                                            <p className="text-[16px] text-[gray]">Showcasing the evolution of everyday items through a creative and minimalist lens.</p>
-                                        </div>
+                                <div className="pl-[30px] pt-[20px] flex">
+                                    <div className="w-[30%]">
+                                        <p className="text-[19px]">Journey of Objects</p>
+                                    </div>
+                                    <div className="w-[50%] ml-[15%]">
+                                        <p className="text-[16px] text-[gray]">
+                                            Showcasing the evolution of everyday items through a creative and minimalist lens.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </Link>
                     </div>
-                    <div className="flex mt-[50px]">
-                        <Link to="/PurpleTape" className="w-[49%]">
+                    <div className="flex mt-[50px] opacity-0" ref={mainRef6}>
+                    <Link to="/PurpleTape" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden relative group">
-                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={PurpleTape } alt="PurpleTape " />
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                <div
+                                    className="overflow-hidden relative group"
+                                    onMouseMove={(e) => handleMouseMove(e, setOffset3)}
+                                    onMouseLeave={() => handleMouseLeave(setOffset3)}
+                                >
+                                    <img
+                                        className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110"
+                                        src={PurpleTape}
+                                        alt="PurpleTape"
+                                    />
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                                        style={{
+                                            transform: `translate(${offset3.x}px, ${offset3.y}px)`,
+                                        }}
+                                    >
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                            <p className="font-bold">View Project</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="pl-[30px] pt-[20px] flex">
-                                        <div className="w-[30%]">
-                                            <p className="text-[19px]">Steeezy</p>
-                                        </div>
-                                        <div className="w-[50%] ml-[15%]">
-                                            <p className="text-[16px] text-[gray]">Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.</p>
-                                        </div>
+                                <div className="pl-[30px] pt-[20px] flex">
+                                    <div className="w-[30%]">
+                                        <p className="text-[19px]">Steeezy</p>
+                                    </div>
+                                    <div className="w-[50%] ml-[15%]">
+                                        <p className="text-[16px] text-[gray]">
+                                            Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </Link>
+
                         <Link to="/DiskPlayer" className="w-[49%]">
                             <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
-                                <div className="overflow-hidden relative group">
-                                    <img className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110 hover:rounded-tl-[10px] hover:rounded-tr-[10px]" src={DiskPlayer } alt="DiskPlayer " />
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none">
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-sm rounded-full text-center flex items-center justify-center"><p className="font-bold">View Project</p></div>
+                                <div
+                                    className="overflow-hidden relative group"
+                                    onMouseMove={(e) => handleMouseMove(e, setOffset4)}
+                                    onMouseLeave={() => handleMouseLeave(setOffset4)}
+                                >
+                                    <img
+                                        className="w-[100%] rounded-tl-[10px] rounded-tr-[10px] transform transition-transform duration-300 group-hover:scale-110"
+                                        src={DiskPlayer}
+                                        alt="DiskPlayer"
+                                    />
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                                        style={{
+                                            transform: `translate(${offset4.x}px, ${offset4.y}px)`,
+                                        }}
+                                    >
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                            <p className="font-bold">View Project</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="pl-[30px] pt-[20px] flex">
-                                        <div className="w-[30%]">
-                                            <p className="text-[19px] ">Art Not Evidence</p>
-                                        </div>
-                                        <div className="w-[50%] ml-[15%]">
-                                            <p className="text-[16px] text-[gray]">Challenging the boundaries between artistic expression and factual representation</p>
-                                        </div>
+                                <div className="pl-[30px] pt-[20px] flex">
+                                    <div className="w-[30%]">
+                                        <p className="text-[19px]">Art Not Evidence</p>
+                                    </div>
+                                    <div className="w-[50%] ml-[15%]">
+                                        <p className="text-[16px] text-[gray]">
+                                            Challenging the boundaries between artistic expression and factual representation
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -337,31 +543,31 @@ function MainPage() {
         </div>
         <div>
           <div>
-            <h2 className="text-[20px] text-center mt-[150px]">TRUSTED BY DESIGN TEAMS AT</h2>
+            <h2 className="text-[20px] text-center mt-[150px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
           </div>
           <div>
-            <div className="flex ml-[260px] mt-[50px]">
-              <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
-              <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
-              <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
-              <img className="ml-[160px] w-[160px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
-              <img className="ml-[100px] w-[160px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
+            <div className="flex ml-[260px] mt-[50px] ">
+              <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef10} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
+              <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef12} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
+              <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef13} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
+              <img className="ml-[160px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef14} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
+              <img className="ml-[100px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef15} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
             </div>
-            <div className="flex ml-[220px] mt-[70px]">
-              <img className="w-[150px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
-              <img className="ml-[180px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
-              <img className="ml-[150px] w-[190px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />
-              <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee8db6576bccc0c163_Logo%20(8).svg" alt="BrandLogo_9 " />
-              <img className="ml-[150px] w-[160px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee4ef06712b61cb996_Logo%20(10).svg" alt="BrandLogo_10 " />
+            <div className="flex ml-[220px] mt-[70px] ">
+              <img className="w-[150px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef11} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
+              <img className="ml-[180px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef16} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
+              <img className="ml-[150px] w-[190px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s]  opacity-0" ref={mainRef17} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />
+              <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef18} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee8db6576bccc0c163_Logo%20(8).svg" alt="BrandLogo_9 " />
+              <img className="ml-[150px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef19} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee4ef06712b61cb996_Logo%20(10).svg" alt="BrandLogo_10 " />
             </div>
           </div>
         </div>
         <div>
-          <div className="mt-[220px] text-center">
+          <div className="mt-[210px] text-center opacity-0" ref={mainRef8} >
             <h2 className="text-[60px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
             <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
           </div>
-          <div className="flex justify-center mt-[80px]">
+          <div className="flex justify-center mt-[80px] opacity-0" ref={mainRef9}>
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
             src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left "
             onClick={handlePrev} />

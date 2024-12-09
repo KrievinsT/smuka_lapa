@@ -12,6 +12,22 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateY(100px)' }, // Start further down
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeSlideUp2: {
+          '0%': { opacity: '0', transform: 'translateY(100px)' }, // Start further down
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeSlideUp3: {
+          '0%': { opacity: '0', transform: 'translateY(100px)' }, // Start further down
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeSlideUp4: {
+          '0%': { opacity: '0', transform: 'translateY(100px)' }, // Start further down
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeSlideUp5: {
+          '0%': { opacity: '0', transform: 'translateY(100px)' }, // Start further down
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
         fadeSlideUpShort: {
           '0%': { opacity: '0', transform: 'translateY(10px)' }, // Start further down
           '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -53,7 +69,11 @@ module.exports = {
         },
       },
       animation: {
-        fadeSlideUp: 'fadeSlideUp 1s ease-out forwards',
+        fadeSlideUp: 'fadeSlideUp 0.8s ease-out forwards',
+        fadeSlideUp2: 'fadeSlideUp 1s ease-out forwards',
+        fadeSlideUp3: 'fadeSlideUp 1s ease-out forwards',
+        fadeSlideUp4: 'fadeSlideUp 1s ease-out forwards',
+        fadeSlideUp5: 'fadeSlideUp 1s ease-out forwards',
         fadeSlideUpShort: 'fadeSlideUp 0.5s ease-out forwards',
         slideUpFade: 'slideUpFade 0.5s ease-in-out',
         slideInFade: 'slideInFade 0.5s ease-in-out',

@@ -70,7 +70,7 @@ function Contact() {
                         ></textarea>
                         <button
                             type="submit"
-                            className="bg-black mt-[50px] px-[50px] py-[15px] text-white text-[20px] font-bold rounded-[4px] transition-all duration-250 hover:bg-[#ee64ff]"
+                            className="bg-black mt-[50px] px-[50px] py-[15px] text-white text-[20px] font-bold rounded-[4px] transition-all duration-800 hover:bg-[#ee64ff]"
                         >
                             SUBMIT
                         </button>
