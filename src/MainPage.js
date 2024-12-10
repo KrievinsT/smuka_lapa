@@ -476,21 +476,21 @@ function MainPage() {
             <div className="bg-[white] w-[28.5%] h-[600px] ml-[5.5%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Transform your business identity through expert branding strategies</h2>
-                <p className="mt-[20px] text-[18px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p>
+                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p></div>
                 <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">01</p>
               </div>
             </div>
             <div className="bg-[white] w-[28.5%] h-[600px] ml-[2%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Unlock innovative web solutions with cutting-edge development</h2>
-                <p className="mt-[20px] text-[18px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p>
+                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p></div>
                 <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">02</p>
               </div>
             </div>
             <div className="bg-[white] w-[28.5%] h-[600px] ml-[2%]">
               <div className="pt-[80px] pl-[60px] pr-[56px]">
                 <h2 className="text-[26px]">Design intuitive user interfaces for exceptional user experiences</h2>
-                <p className="mt-[20px] text-[18px] text-[gray]">We create user-centered designs that enhance engagement and usability</p>
+                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">We create user-centered designs that enhance engagement and usability</p></div>
                 <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">03</p>
               </div>
             </div>
@@ -664,14 +664,14 @@ function MainPage() {
             <h2 className="text-[20px] text-center mt-[150px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
           </div>
           <div>
-            <div className="flex ml-[200px] mt-[50px]">
+            <div className="flex ml-[170px] mt-[50px]">
               <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef10} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
               <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef12} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
               <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef13} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
               <img className="ml-[160px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef14} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
               <img className="ml-[100px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef15} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
             </div>
-            <div className="flex ml-[220px] mt-[70px]">
+            <div className="flex ml-[130px] mt-[70px]">
               <img className="w-[150px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef11} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
               <img className="ml-[180px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef16} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
               <img className="ml-[150px] w-[190px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s]  opacity-0" ref={mainRef17} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />
