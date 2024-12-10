@@ -693,14 +693,14 @@ function MainPage() {
               <div className={`${isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                 <img className=" h-[353px] w-[255px] mt-[30px] ml-[30px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
               </div>
-              <div className="pl-[35px] pt-[60px] w-[650px]">
+              <div className="pl-[35px] pt-[60px] w-[600px]">
                 <div  className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                  <p className="text-[24px] h-[125px]">{currentTestimonial.text}</p>
+                  <p className="text-[22px] h-[125px]">{currentTestimonial.text}</p>
                 </div>
                 <div className="flex mt-[110px]">
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                    <p className="text-[24px] w-[300px]">{currentTestimonial.name}</p>
-                    <p className="text-[gray] text-[15px] w-[300px]">{currentTestimonial.title}</p>
+                    <p className="text-[22px] w-[260px]">{currentTestimonial.name}</p>
+                    <p className="text-[gray] text-[15px] w-[260px]">{currentTestimonial.title}</p>
                   </div>
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                     <div className="flex ml-[200px] mt-[20px]">
