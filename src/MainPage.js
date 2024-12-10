@@ -432,10 +432,10 @@ function MainPage() {
             </div>
         </div>
         <div className="flex pl-[70px] mt-[350px]">
-          <div className="w-[270px]">
+          <div className="w-[330px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="ml-[1080px]">
+          <div className="ml-[880px]">
             <a className="text-[18px]">contact@sandbox.com</a>
           </div>
         </div>
