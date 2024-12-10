@@ -44,11 +44,11 @@ module.exports = {
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
-        marquee2: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0%)' },
+        squishReveal: {
+          '0%': { transform: 'scaleX(0)', opacity: '0' }, // Fully squished and invisible
+          '100%': { transform: 'scaleX(1)', opacity: '1' }, // Fully revealed
         },
       },
       animation: {
@@ -59,8 +59,8 @@ module.exports = {
         slideDownAndFadeOut: 'slideDownAndFadeOut 0.3s ease-out forwards',
         fadeIn: 'fadeIn 0.3s ease-out forwards',
         grow: 'growIn 0.5s ease-out forwards',
-        marquee: 'marquee 25s linear infinite',
-        marquee2: 'marquee2 25s linear infinite',
+        marquee: 'marquee linear infinite',
+        squishReveal: 'squishReveal 0.5s ease-out forwards',
       },
     },
   },
