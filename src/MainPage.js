@@ -664,7 +664,7 @@ function MainPage() {
             <h2 className="text-[20px] text-center mt-[150px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
           </div>
           <div>
-            <div className="flex ml-[260px] mt-[50px]">
+            <div className="flex ml-[200px] mt-[50px]">
               <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef10} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
               <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef12} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
               <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef13} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
@@ -682,8 +682,8 @@ function MainPage() {
         </div>
         <div>
           <div className="mt-[210px] text-center opacity-0" ref={mainRef8} >
-            <h2 className="text-[55px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
-            <p className="text-[14px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
+            <h2 className="text-[50px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
+            <p className="text-[12px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
           </div>
           <div className="flex justify-center mt-[80px] opacity-0" ref={mainRef9}>
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
@@ -695,12 +695,12 @@ function MainPage() {
               </div>
               <div className="pl-[35px] pt-[60px] w-[650px]">
                 <div  className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                  <p className="text-[27px] h-[125px]">{currentTestimonial.text}</p>
+                  <p className="text-[24px] h-[125px]">{currentTestimonial.text}</p>
                 </div>
                 <div className="flex mt-[110px]">
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                    <p className="text-[27px] w-[300px]">{currentTestimonial.name}</p>
-                    <p className="text-[gray] text-[18px] w-[300px]">{currentTestimonial.title}</p>
+                    <p className="text-[24px] w-[300px]">{currentTestimonial.name}</p>
+                    <p className="text-[gray] text-[15px] w-[300px]">{currentTestimonial.title}</p>
                   </div>
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                     <div className="flex ml-[200px] mt-[20px]">
