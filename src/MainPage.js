@@ -60,6 +60,11 @@ function MainPage() {
   const mainRef17 = useRef(null);
   const mainRef18 = useRef(null);
   const mainRef19 = useRef(null);
+  const mainRef20 = useRef(null);
+  const mainRef21 = useRef(null);
+  const mainRef88 = useRef(null);
+  const mainRef89 = useRef(null);
+  const mainRef90 = useRef(null);
 
   const [offset1, setOffset1] = useState({ x: 0, y: 0 });
     const [offset2, setOffset2] = useState({ x: 0, y: 0 });
@@ -109,6 +114,93 @@ function MainPage() {
     if (mainRef1.current) {
       const cleanupObserver1 = observeElement(mainRef1.current);
       return cleanupObserver1;
+    }
+  }, [observeElement]);
+
+  const observeElement88 = useCallback((element) => {
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0');
+            entry.target.classList.add('animate-squishReveal');
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect(); // Cleanup observer when the component unmounts
+    };
+  }, []);
+
+  useEffect(() => {
+    if (mainRef88.current) {
+      const cleanupObserver88 = observeElement88(mainRef88.current);
+      return cleanupObserver88;
+    }
+  }, [observeElement]);
+
+  const observeElement89 = useCallback((element) => {
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0');
+            entry.target.classList.add('animate-squishReveal');
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect(); // Cleanup observer when the component unmounts
+    };
+  }, []);
+
+  useEffect(() => {
+    if (mainRef89.current) {
+      const cleanupObserver89 = observeElement89(mainRef89.current);
+      return cleanupObserver89;
+    }
+  }, [observeElement]);
+
+  const observeElement90 = useCallback((element) => {
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0');
+            entry.target.classList.add('animate-squishReveal');
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect(); // Cleanup observer when the component unmounts
+    };
+  }, []);
+
+  useEffect(() => {
+    if (mainRef90.current) {
+      const cleanupObserver90 = observeElement90(mainRef90.current);
+      return cleanupObserver90;
     }
   }, [observeElement]);
 
@@ -236,6 +328,21 @@ function MainPage() {
       const cleanupObserver19 = observeElement(mainRef19.current);
       return cleanupObserver19;
     }
+    
+  }, [observeElement]);
+  useEffect(() => {
+    if (mainRef20.current) {
+      const cleanupObserver20 = observeElement(mainRef20.current);
+      return cleanupObserver20;
+    }
+  }, [observeElement]); 
+
+  useEffect(() => {
+    if (mainRef21.current) {
+      const cleanupObserver21 = observeElement(mainRef21.current);
+      return cleanupObserver21;
+    }
+    
   }, [observeElement]);
   const testimonials = [
     {
@@ -300,19 +407,31 @@ function MainPage() {
   
     const currentTestimonial = testimonials[currentIndex];
 
+  
   return (
     <div>
       <Header />
-      <main className="bg-[#efefef]">
+      <main className="bg-[#efefef] relative w-full">
         <div className="flex justify-center opacity-0 animate-fadeSlideUpShort delay-300">
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
             <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
         </div>
-        <div className="w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
-            <h1 className="text-[570%] leading-none">Elevate your brand with creative solutions</h1>
+        <div className=" z-10 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+            <h1 className="text-[510%] leading-none">Elevate your brand with creative solutions</h1>
         </div>
-        <div className="flex pl-[70px] mt-[120px]">
+        <div className="w-[24%] relative ml-[38%] mt-[160px] ">
+            <div className="absolute z-3">
+              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
+            </div>
+            <div className="absolute z-4">
+              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
+            </div>
+            <div className="absolute z-5">
+              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
+            </div>
+        </div>
+        <div className="flex pl-[70px] mt-[350px]">
           <div className="w-[270px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
@@ -320,35 +439,34 @@ function MainPage() {
             <a className="text-[18px]">contact@sandbox.com</a>
           </div>
         </div>
-        <div className="relative overflow-x-hidden h-[300px] flex">
-          <div className="animate-marquee flex items-center justify-start ">
-            <p className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</p>
+        <div className="relative overflow-x-hidden h-[300px] flex mt-[-40px]">
+          <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
+            <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
             <p className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
           </div>
         </div>
-        
         <div>
-          <h2 className="text-center text-[60px] mt-[100px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
-            Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
+          <h2 className="text-center text-[60px] mt-[120px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
+            Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
-            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
+            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
             designers and development trailblazers ignites your 
-            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24c9b_Text%20Images%2003.jpg" alt="astronaut " />
+            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef90} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24c9b_Text%20Images%2003.jpg" alt="astronaut " />
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[140px] ml-[375px] opacity-0" ref={mainRef2}>
-          <div className="font-normal leading-none">
+        <div className="flex mt-[140px] ml-[375px] " >
+          <div className="font-normal leading-none opacity-0" ref={mainRef2}>
             <p className="text-[90px]">3+</p>
             <p className="text-[20px] text-[rgb(82,_82,_82)]">Years of experiance</p>
           </div>
-          <div className="font-normal leading-none ml-[190px]">
+          <div className="font-normal leading-none ml-[190px] [animation-delay:0.1s] opacity-0" ref={mainRef20}>
             <p className="text-[90px] leading-none">40+</p>
             <p className="text-[20px] text-[rgb(82,_82,_82)]">Satisfied clients</p>
           </div>
-          <div className="font-normal leading-none ml-[190px]">
+          <div className="font-normal leading-none ml-[190px] [animation-delay:0.2s] opacity-0" ref={mainRef21}>
             <p className="text-[90px] leading-none">100+</p>
             <p className="text-[20px] text-[rgb(82,_82,_82)]">Projects delivered</p>
           </div>
@@ -411,7 +529,7 @@ function MainPage() {
                                             transform: `translate(${offset1.x}px, ${offset1.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
@@ -447,7 +565,7 @@ function MainPage() {
                                             transform: `translate(${offset2.x}px, ${offset2.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
@@ -484,7 +602,7 @@ function MainPage() {
                                             transform: `translate(${offset3.x}px, ${offset3.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
@@ -520,7 +638,7 @@ function MainPage() {
                                             transform: `translate(${offset4.x}px, ${offset4.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
@@ -546,14 +664,14 @@ function MainPage() {
             <h2 className="text-[20px] text-center mt-[150px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
           </div>
           <div>
-            <div className="flex ml-[260px] mt-[50px] ">
+            <div className="flex ml-[260px] mt-[50px]">
               <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef10} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
               <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef12} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
               <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef13} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
               <img className="ml-[160px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef14} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
               <img className="ml-[100px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef15} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
             </div>
-            <div className="flex ml-[220px] mt-[70px] ">
+            <div className="flex ml-[220px] mt-[70px]">
               <img className="w-[150px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef11} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
               <img className="ml-[180px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef16} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
               <img className="ml-[150px] w-[190px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s]  opacity-0" ref={mainRef17} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />

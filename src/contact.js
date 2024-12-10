@@ -49,8 +49,9 @@ function Contact() {
                         <label htmlFor="name" className="w-[560px] text-[#151515] text-left">Name</label>
                         <input
                             id="name"
+                            type="text"
                             placeholder="Enter your name"
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)] focus:outline-none focus:border-[#000000] "
+                            className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)] focus:outline-none focus:border-[#000000] "
                             required
                         />
                         <label htmlFor="email" className="w-[560px] text-[#151515] text-left mt-[26px]">E-mail</label>
@@ -58,14 +59,15 @@ function Contact() {
                             type="email"
                             id="email"
                             placeholder="Enter your e-mail"
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
+                            className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] pl-[18px] w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         />
                         <label htmlFor="message" className="w-[560px] text-[#151515] text-left mt-[26px]">Message</label>
                         <textarea
                             id="message"
+                            type="text"
                             placeholder="Your message..."
-                            className="mt-[16px] bg-[#efefef] text-[17px] pl-[18px] pt-[20px] w-[560px] h-[100px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
+                            className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] pl-[18px] pt-[20px] w-[560px] h-[100px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         ></textarea>
                         <button
