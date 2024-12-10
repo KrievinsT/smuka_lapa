@@ -506,13 +506,13 @@ function MainPage() {
         <div>
           <div>
             <div className="mt-[220px] text-center opacity-0" ref={mainRef4}>
-              <h2 className="text-[60px] font-bold px-[530px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
-              <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
+              <h2 className="text-[60px] font-bold px-[430px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
+              <p className="text-[18px] mt-[20px] px-[470px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
             </div>
             <div className="p-[0]">
                     <div className="flex mt-[100px] w-[100%] opacity-0" ref={mainRef5}>
                     <Link to="/Astronaut" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white]  ml-[5%] h-auto pb-[40px] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset1)}
@@ -548,7 +548,7 @@ function MainPage() {
                         </Link>
 
                         <Link to="/SportsCar" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset2)}
@@ -585,7 +585,7 @@ function MainPage() {
                     </div>
                     <div className="flex mt-[50px] opacity-0" ref={mainRef6}>
                     <Link to="/PurpleTape" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset3)}
@@ -621,7 +621,7 @@ function MainPage() {
                         </Link>
 
                         <Link to="/DiskPlayer" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset4)}
