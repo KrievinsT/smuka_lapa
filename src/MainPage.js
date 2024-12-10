@@ -457,18 +457,18 @@ function MainPage() {
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[140px] ml-[375px] " >
+        <div className="flex mt-[140px] ml-[315px] " >
           <div className="font-normal leading-none opacity-0" ref={mainRef2}>
-            <p className="text-[90px]">3+</p>
-            <p className="text-[20px] text-[rgb(82,_82,_82)]">Years of experiance</p>
+            <p className="text-[85px]">3+</p>
+            <p className="text-[18px] text-[rgb(82,_82,_82)]">Years of experiance</p>
           </div>
           <div className="font-normal leading-none ml-[190px] [animation-delay:0.1s] opacity-0" ref={mainRef20}>
-            <p className="text-[90px] leading-none">40+</p>
-            <p className="text-[20px] text-[rgb(82,_82,_82)]">Satisfied clients</p>
+            <p className="text-[85px] leading-none">40+</p>
+            <p className="text-[18px] text-[rgb(82,_82,_82)]">Satisfied clients</p>
           </div>
           <div className="font-normal leading-none ml-[190px] [animation-delay:0.2s] opacity-0" ref={mainRef21}>
-            <p className="text-[90px] leading-none">100+</p>
-            <p className="text-[20px] text-[rgb(82,_82,_82)]">Projects delivered</p>
+            <p className="text-[85px] leading-none">100+</p>
+            <p className="text-[18px] text-[rgb(82,_82,_82)]">Projects delivered</p>
           </div>
         </div>
         <div>
@@ -539,7 +539,7 @@ function MainPage() {
                                         <p className="text-[19px]">GRO-OP</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Focused on sustainable growth strategies, empowering businesses to thrive through innovation.
                                         </p>
                                     </div>
@@ -575,7 +575,7 @@ function MainPage() {
                                         <p className="text-[19px]">Journey of Objects</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Showcasing the evolution of everyday items through a creative and minimalist lens.
                                         </p>
                                     </div>
@@ -612,7 +612,7 @@ function MainPage() {
                                         <p className="text-[19px]">Steeezy</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.
                                         </p>
                                     </div>
@@ -648,7 +648,7 @@ function MainPage() {
                                         <p className="text-[19px]">Art Not Evidence</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Challenging the boundaries between artistic expression and factual representation
                                         </p>
                                     </div>
