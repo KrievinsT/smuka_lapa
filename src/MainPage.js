@@ -432,11 +432,11 @@ function MainPage() {
             </div>
         </div>
         <div className="flex pl-[70px] mt-[350px]">
-          <div className="w-[330px]">
+          <div className="w-[280px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
           <div className="ml-[880px]">
-            <a className="text-[18px]">contact@sandbox.com</a>
+            <a className="text-[16px]">contact@sandbox.com</a>
           </div>
         </div>
         <div className="relative overflow-x-hidden h-[300px] flex mt-[-40px]">
@@ -448,7 +448,7 @@ function MainPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-center text-[54px] mt-[120px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
+          <h2 className="text-center text-[54px] mt-[120px] px-[140px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
             Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
             <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
