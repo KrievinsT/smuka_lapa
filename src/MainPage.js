@@ -448,7 +448,7 @@ function MainPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-center text-[60px] mt-[120px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
+          <h2 className="text-center text-[54px] mt-[120px] px-[180px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
             Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
             <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
@@ -682,8 +682,8 @@ function MainPage() {
         </div>
         <div>
           <div className="mt-[210px] text-center opacity-0" ref={mainRef8} >
-            <h2 className="text-[60px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
-            <p className="text-[18px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
+            <h2 className="text-[55px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
+            <p className="text-[14px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
           </div>
           <div className="flex justify-center mt-[80px] opacity-0" ref={mainRef9}>
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
