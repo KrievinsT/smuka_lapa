@@ -9,6 +9,7 @@ import SportsCar from './img/SportsCar.png';
 
 function Portfolio() {
     const mainRef = useRef(null);
+    const mainRef2 = useRef(null);
 
     const [offset1, setOffset1] = useState({ x: 0, y: 0 });
     const [offset2, setOffset2] = useState({ x: 0, y: 0 });
@@ -49,6 +50,27 @@ function Portfolio() {
 
         return () => {
             if (mainRef.current) observer.unobserve(mainRef.current);
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeSlideUp');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (mainRef2.current) {
+            observer.observe(mainRef2.current);
+        }
+
+        return () => {
+            if (mainRef2.current) observer.unobserve(mainRef2.current);
         };
     }, []);
 
@@ -138,7 +160,7 @@ function Portfolio() {
                             </div>
                         </Link>
                         </div>
-                        <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
+                        <div className="flex mt-[100px] w-[100%] opacity-0" ref={mainRef2}>
                         <Link to="/PurpleTape" className="w-[49%]">
                             <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
