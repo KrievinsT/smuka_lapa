@@ -67,7 +67,7 @@ function Portfolio() {
                 <div>
                     <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
                         <Link to="/Astronaut" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset1)}
@@ -94,7 +94,7 @@ function Portfolio() {
                                         <p className="text-[19px]">GRO-OP</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Focused on sustainable growth strategies, empowering businesses to thrive through innovation.
                                         </p>
                                     </div>
@@ -103,7 +103,7 @@ function Portfolio() {
                         </Link>
 
                         <Link to="/SportsCar" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset2)}
@@ -130,7 +130,7 @@ function Portfolio() {
                                         <p className="text-[19px]">Journey of Objects</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Showcasing the evolution of everyday items through a creative and minimalist lens.
                                         </p>
                                     </div>
@@ -140,7 +140,7 @@ function Portfolio() {
                         </div>
                         <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
                         <Link to="/PurpleTape" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset3)}
@@ -167,7 +167,7 @@ function Portfolio() {
                                         <p className="text-[19px]">Steeezy</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.
                                         </p>
                                     </div>
@@ -176,7 +176,7 @@ function Portfolio() {
                         </Link>
 
                         <Link to="/DiskPlayer" className="w-[49%]">
-                            <div className="bg-[white] h-[670px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset4)}
@@ -203,7 +203,7 @@ function Portfolio() {
                                         <p className="text-[19px]">Art Not Evidence</p>
                                     </div>
                                     <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[16px] text-[gray]">
+                                        <p className="text-[14px] text-[gray]">
                                             Challenging the boundaries between artistic expression and factual representation
                                         </p>
                                     </div>
