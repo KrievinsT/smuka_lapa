@@ -62,7 +62,7 @@ function Portfolio() {
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
                 </div>
                 <div className="w-full text-center px-[28%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
-                    <h1 className="text-[570%] leading-none">Where vision meets excellence</h1>
+                    <h1 className="text-[460%] leading-none">Where vision meets excellence</h1>
                 </div>
                 <div>
                     <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
