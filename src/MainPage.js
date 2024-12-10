@@ -439,7 +439,7 @@ function MainPage() {
             <a className="text-[16px]">contact@sandbox.com</a>
           </div>
         </div>
-        <div className="relative overflow-x-hidden h-[300px] flex mt-[-40px]">
+        <div className="overflow-x-hidden h-[300px] flex mt-[-40px] z-1">
           <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
             <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
