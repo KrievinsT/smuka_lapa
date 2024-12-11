@@ -54,3 +54,30 @@ code {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
 }
+
+.z-31, .z-32, .z-33 {
+  transition: transform 2s ease;
+}
+
+.image-container {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  perspective: 1000px;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5) rotateX(90deg); /* Start from a collapsed, tilted position */
+  opacity: 0; /* Hidden initially */
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.image.animate {
+  transform: translate(-50%, -50%) scale(1) rotateX(0); /* Final position */
+  opacity: 1;
+}

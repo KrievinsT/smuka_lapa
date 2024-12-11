@@ -50,6 +50,7 @@ module.exports = {
           '0%': { transform: 'scaleX(0)', opacity: '0' }, // Fully squished and invisible
           '100%': { transform: 'scaleX(1)', opacity: '1' }, // Fully revealed
         },
+        
       },
       animation: {
         fadeSlideUp: 'fadeSlideUp 0.8s ease-out forwards',

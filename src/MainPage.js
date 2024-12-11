@@ -87,7 +87,62 @@ function MainPage() {
         setOffset({ x: 0, y: 0 });
     };
 
-    
+    const imagesContainerRef = useRef(null);
+
+    useEffect(() => {
+      const handleMouseMove = (e) => {
+        if (!imagesContainerRef.current) return;
+  
+        const rect = imagesContainerRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2; // Horizontal center of the images
+        const distanceFromCenter = e.clientX - centerX; // Cursor distance from center
+  
+        // Horizontal movement toward or away from the cursor
+        const z31Rotation = Math.min(7, Math.max(-7, -distanceFromCenter / 50));
+        const z32Rotation = Math.min(7, Math.max(-7, distanceFromCenter / 60));
+        const z33Rotation = Math.min(10, Math.max(-10, distanceFromCenter / 30));
+      
+        // Horizontal and vertical translation
+        const z31MoveX = Math.min(15, Math.max(-15, distanceFromCenter / 50)); // Less horizontal movement
+        const z32MoveX = Math.min(13, Math.max(-13, -distanceFromCenter / 60)); // Subtler movement
+        const z33MoveX = Math.min(17, Math.max(-17, distanceFromCenter / 40)); // Slightly smaller movement
+        const z31TranslationY = Math.min(5, Math.max(-5, distanceFromCenter / 60)); // Subtler vertical movement
+        const z32TranslationY = Math.min(3, Math.max(-3, -distanceFromCenter / 70)); // Reduced vertical movement
+        const z33TranslationY = Math.min(7, Math.max(-7, distanceFromCenter / 50)); // Less dramatic
+  
+        // Apply transformations to each image
+        document.querySelector(".z-31").style.transform = `rotate(${z31Rotation}deg) translate(${z31MoveX}px, ${z31TranslationY}px)`;
+        document.querySelector(".z-32").style.transform = `rotate(${z32Rotation}deg) translate(${z32MoveX}px, ${z32TranslationY}px)`;
+        document.querySelector(".z-33").style.transform = `rotate(${z33Rotation}deg) translate(${z33MoveX}px, ${z33TranslationY}px)`;
+      };
+  
+      const handleMouseLeave = () => {
+        // Reset transformations when the mouse leaves the viewport
+        document.querySelector(".z-31").style.transform = "none";
+        document.querySelector(".z-32").style.transform = "none";
+        document.querySelector(".z-33").style.transform = "none";
+      };
+  
+      // Attach the event listener to the entire window
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseleave", handleMouseLeave);
+  
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }, []);
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("img");
+
+  images.forEach((image, index) => {
+    setTimeout(() => {
+      image.classList.add("animate-stack");
+    }, index * 500); // Delay each animation by 500ms
+  });
+});
+
   // Intersection Observer logic encapsulated in useCallback
   const observeElement = useCallback((element) => {
     if (!element) return;
@@ -417,17 +472,17 @@ function MainPage() {
             <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
         </div>
-        <div className=" z-10 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+        <div className=" z-40 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
             <h1 className="text-[510%] leading-none">Elevate your brand with creative solutions</h1>
         </div>
-        <div className="w-[24%] relative ml-[38%] mt-[160px] ">
-            <div className="absolute z-3">
+        <div className="w-[24%] relative ml-[38%] mt-[160px] "  ref={imagesContainerRef}>
+            <div className="absolute z-31">
               <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
             </div>
-            <div className="absolute z-4">
+            <div className="absolute z-32">
               <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
             </div>
-            <div className="absolute z-5">
+            <div className="absolute z-33">
               <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
             </div>
         </div>
@@ -439,7 +494,7 @@ function MainPage() {
             <a className="text-[16px]">contact@sandbox.com</a>
           </div>
         </div>
-        <div className="overflow-x-hidden h-[300px] flex mt-[-40px] z-1">
+        <div className="overflow-x-hidden h-[300px] flex mt-[-40px] z-30">
           <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
             <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
