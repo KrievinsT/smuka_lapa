@@ -8,36 +8,6 @@ import DiskPlayer from './img/DiskPlayer.png';
 import PurpleTape from './img/PurpleTape.png';
 import SportsCar from './img/SportsCar.png';
 
-const useIntersectionObserver = (callback, options) => {
-  const observerRef = useRef(null);
-
-  const observe = useCallback(
-    (element) => {
-      if (!element) return;
-
-      // Create observer if it doesn't exist
-      if (!observerRef.current) {
-        observerRef.current = new IntersectionObserver(callback, options);
-      }
-
-      observerRef.current.observe(element);
-
-      return () => {
-        observerRef.current?.unobserve(element);
-      };
-    },
-    [callback, options]
-  );
-
-  useEffect(() => {
-    return () => {
-      // Disconnect observer on cleanup
-      observerRef.current?.disconnect();
-    };
-  }, []);
-
-  return observe;
-};
 
 function MainPage() {
 
@@ -98,22 +68,19 @@ function MainPage() {
         const distanceFromCenter = e.clientX - centerX; // Cursor distance from center
   
         // Horizontal movement toward or away from the cursor
-        const z31Rotation = Math.min(7, Math.max(-7, -distanceFromCenter / 50));
-        const z32Rotation = Math.min(7, Math.max(-7, distanceFromCenter / 60));
-        const z33Rotation = Math.min(10, Math.max(-10, distanceFromCenter / 30));
+        const z31Rotation = Math.min(8, Math.max(-8, distanceFromCenter));
+        const z32Rotation = Math.min(11, Math.max(-11, distanceFromCenter));
+        const z33Rotation = Math.min(13, Math.max(-13, distanceFromCenter));
       
         // Horizontal and vertical translation
-        const z31MoveX = Math.min(15, Math.max(-15, distanceFromCenter / 50)); // Less horizontal movement
-        const z32MoveX = Math.min(13, Math.max(-13, -distanceFromCenter / 60)); // Subtler movement
-        const z33MoveX = Math.min(17, Math.max(-17, distanceFromCenter / 40)); // Slightly smaller movement
-        const z31TranslationY = Math.min(5, Math.max(-5, distanceFromCenter / 60)); // Subtler vertical movement
-        const z32TranslationY = Math.min(3, Math.max(-3, -distanceFromCenter / 70)); // Reduced vertical movement
-        const z33TranslationY = Math.min(7, Math.max(-7, distanceFromCenter / 50)); // Less dramatic
+        const z31MoveX = Math.min(61, Math.max(-61, -distanceFromCenter)); // Less horizontal movement
+        const z32MoveX = Math.min(28, Math.max(-98, -distanceFromCenter)); // Subtler movement
+        const z33MoveX = Math.min(30, Math.max(-17, distanceFromCenter)); // Slightly smaller movement
   
         // Apply transformations to each image
-        document.querySelector(".z-31").style.transform = `rotate(${z31Rotation}deg) translate(${z31MoveX}px, ${z31TranslationY}px)`;
-        document.querySelector(".z-32").style.transform = `rotate(${z32Rotation}deg) translate(${z32MoveX}px, ${z32TranslationY}px)`;
-        document.querySelector(".z-33").style.transform = `rotate(${z33Rotation}deg) translate(${z33MoveX}px, ${z33TranslationY}px)`;
+        document.querySelector(".z-31").style.transform = `rotate(${z31Rotation}deg) translate(${z31MoveX}px)`;
+        document.querySelector(".z-32").style.transform = `rotate(${z32Rotation}deg) translate(${z32MoveX}px)`;
+        document.querySelector(".z-33").style.transform = `rotate(${z33Rotation}deg) translate(${z33MoveX}px)`;
       };
   
       const handleMouseLeave = () => {
