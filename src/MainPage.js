@@ -133,15 +133,6 @@ function MainPage() {
       };
     }, []);
 
-    document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll("img");
-
-  images.forEach((image, index) => {
-    setTimeout(() => {
-      image.classList.add("animate-stack");
-    }, index * 500); // Delay each animation by 500ms
-  });
-});
 
   // Intersection Observer logic encapsulated in useCallback
   const observeElement = useCallback((element) => {
@@ -466,7 +457,7 @@ function MainPage() {
   return (
     <div>
       <Header />
-      <main className="bg-[#efefef] relative w-full">
+      <main>
         <div className="flex justify-center opacity-0 animate-fadeSlideUpShort delay-300">
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
             <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
@@ -490,11 +481,13 @@ function MainPage() {
           <div className="w-[280px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="ml-[880px]">
-            <a className="text-[16px]">contact@sandbox.com</a>
+          <div className="ml-[910px] h-auto w-auto border-b border-[lightgray] cursor-pointer pt-[20px]">
+            <div className="border-b border-[black] w-[48px] mt-1 transition-all duration-1000 hover:w-[160px]">
+              <a className="text-[16px]">contact@sandbox.com</a>
+            </div>
           </div>
         </div>
-        <div className="overflow-x-hidden h-[300px] flex mt-[-40px] z-30">
+        <div className="overflow-x-hidden h-[240px] flex mt-[40px] z-30">
           <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
             <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
@@ -744,7 +737,7 @@ function MainPage() {
             <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
             src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left "
             onClick={handlePrev} />
-            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] overflow-hidden image-container relative shadow-[50px] flex">
+            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] overflow-hidden relative shadow-[50px] flex">
               <div className={`${isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                 <img className=" h-[353px] w-[255px] mt-[30px] ml-[30px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
               </div>
