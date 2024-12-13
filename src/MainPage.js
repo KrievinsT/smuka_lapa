@@ -74,7 +74,7 @@ function MainPage() {
       
         // Horizontal and vertical translation
         const z31MoveX = Math.min(61, Math.max(-61, -distanceFromCenter)); // Less horizontal movement
-        const z32MoveX = Math.min(28, Math.max(-98, -distanceFromCenter)); // Subtler movement
+        const z32MoveX = Math.min(28, Math.max(-28, -distanceFromCenter)); // Subtler movement
         const z33MoveX = Math.min(30, Math.max(-17, distanceFromCenter)); // Slightly smaller movement
   
         // Apply transformations to each image
