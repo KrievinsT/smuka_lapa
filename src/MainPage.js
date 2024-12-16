@@ -458,27 +458,27 @@ function MainPage() {
             <h1 className="text-[510%] leading-none">Elevate your brand with creative solutions</h1>
         </div>
         <div className="w-[24%] relative ml-[38%] mt-[160px]" ref={imagesContainerRef}>
-            <div className="absolute z-31 " >
+            <div className="absolute z-[31] z-31" >
               <img className="rounded-[10px] animate-riseAndShrink opacity-0" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
             </div>
-            <div className="absolute z-32">
+            <div className="absolute z-[32] z-32">
               <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:0.5s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
             </div>
-            <div className="absolute z-33 ">
+            <div className="absolute z-[33] z-33">
               <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:1s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
             </div>
         </div>
-        <div className="flex pl-[70px] mt-[350px] opacity-0" ref={mainRef22}>
+        <div className="flex pl-[70px] mt-[280px] opacity-0" ref={mainRef22}>
           <div className="w-[280px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="ml-[910px] h-auto w-auto border-b border-[lightgray] cursor-pointer pt-[20px]">
-            <div className="border-b border-[black] w-[48px] mt-1 transition-all duration-1000 hover:w-[160px]">
-              <a className="text-[16px]">contact@sandbox.com</a>
+          <div className="ml-[910px] h-auto w-auto border-b relative border-[lightgray] cursor-pointer" style={{ position: 'relative' }}>
+            <div className="border-b border-[black] w-[48px] mt-1 transition-all duration-1000 hover:w-[160px]" style={{ position: 'relative' }}>
+              <a className="text-[16px] z-[33]" style={{ position: 'relative' }}>contact@sandbox.com</a>
             </div>
           </div>
         </div>
-        <div className="overflow-x-hidden h-[300px] flex mt-[20px] z-30 opacity-0" ref={mainRef23}>
+        <div className="overflow-x-hidden h-[300px] mt-[-30px] flex z-[-30] opacity-0" ref={mainRef23}>
           <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
             <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
