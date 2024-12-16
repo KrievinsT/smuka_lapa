@@ -1,5 +1,5 @@
 import './styles/App.css';
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Header from './accesories/header';
 import Footer from './accesories/footer';
 import { Link } from 'react-router-dom';
@@ -32,10 +32,20 @@ function MainPage() {
   const mainRef19 = useRef(null);
   const mainRef20 = useRef(null);
   const mainRef21 = useRef(null);
+  const mainRef22 = useRef(null);
+  const mainRef23 = useRef(null);
   const mainRef88 = useRef(null);
   const mainRef89 = useRef(null);
   const mainRef90 = useRef(null);
+  const imagesContainerRef = useRef(null);
+  const imageRef = useRef(null); // Reference for the animated image
 
+  useEffect(() => {
+    if (imageRef.current) {
+      imageRef.current.classList.add('animate-riseAndShrink');
+    }
+  }, []);
+  
   const [offset1, setOffset1] = useState({ x: 0, y: 0 });
     const [offset2, setOffset2] = useState({ x: 0, y: 0 });
     const [offset3, setOffset3] = useState({ x: 0, y: 0 });
@@ -57,8 +67,6 @@ function MainPage() {
         setOffset({ x: 0, y: 0 });
     };
 
-    const imagesContainerRef = useRef(null);
-
     useEffect(() => {
       const handleMouseMove = (e) => {
         if (!imagesContainerRef.current) return;
@@ -68,14 +76,14 @@ function MainPage() {
         const distanceFromCenter = e.clientX - centerX; // Cursor distance from center
   
         // Horizontal movement toward or away from the cursor
-        const z31Rotation = Math.min(8, Math.max(-8, distanceFromCenter));
-        const z32Rotation = Math.min(11, Math.max(-11, distanceFromCenter));
-        const z33Rotation = Math.min(13, Math.max(-13, distanceFromCenter));
+        const z31Rotation = Math.min(3, Math.max(-3, distanceFromCenter));
+        const z32Rotation = Math.min(5, Math.max(-5, distanceFromCenter));
+        const z33Rotation = Math.min(7, Math.max(-7, distanceFromCenter));
       
         // Horizontal and vertical translation
-        const z31MoveX = Math.min(61, Math.max(-61, -distanceFromCenter)); // Less horizontal movement
-        const z32MoveX = Math.min(28, Math.max(-28, -distanceFromCenter)); // Subtler movement
-        const z33MoveX = Math.min(30, Math.max(-17, distanceFromCenter)); // Slightly smaller movement
+        const z31MoveX = Math.min(81, Math.max(-81, -distanceFromCenter)); // Less horizontal movement
+        const z32MoveX = Math.min(25, Math.max(-25, -distanceFromCenter)); // Subtler movement
+        const z33MoveX = Math.min(30, Math.max(-30, distanceFromCenter)); // Slightly smaller movement
   
         // Apply transformations to each image
         document.querySelector(".z-31").style.transform = `rotate(${z31Rotation}deg) translate(${z31MoveX}px)`;
@@ -357,6 +365,22 @@ function MainPage() {
     }
     
   }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef22.current) {
+      const cleanupObserver22 = observeElement(mainRef22.current);
+      return cleanupObserver22;
+    }
+    
+  }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef23.current) {
+      const cleanupObserver23 = observeElement(mainRef23.current);
+      return cleanupObserver23;
+    }
+    
+  }, [observeElement]);
   const testimonials = [
     {
       image: 'https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c160db3c3c74e3cddc55_Testimonial%20Image%2003.jpg',
@@ -430,21 +454,21 @@ function MainPage() {
             <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
             <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
         </div>
-        <div className=" z-40 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+        <div className="z-40 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
             <h1 className="text-[510%] leading-none">Elevate your brand with creative solutions</h1>
         </div>
-        <div className="w-[24%] relative ml-[38%] mt-[160px] "  ref={imagesContainerRef}>
-            <div className="absolute z-31">
-              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
+        <div className="w-[24%] relative ml-[38%] mt-[160px]" ref={imagesContainerRef}>
+            <div className="absolute z-31 " >
+              <img className="rounded-[10px] animate-riseAndShrink opacity-0" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
             </div>
             <div className="absolute z-32">
-              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
+              <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:0.5s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
             </div>
-            <div className="absolute z-33">
-              <img className="rounded-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
+            <div className="absolute z-33 ">
+              <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:1s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
             </div>
         </div>
-        <div className="flex pl-[70px] mt-[350px]">
+        <div className="flex pl-[70px] mt-[350px] opacity-0" ref={mainRef22}>
           <div className="w-[280px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
@@ -454,7 +478,7 @@ function MainPage() {
             </div>
           </div>
         </div>
-        <div className="overflow-x-hidden h-[240px] flex mt-[40px] z-30">
+        <div className="overflow-x-hidden h-[300px] flex mt-[20px] z-30 opacity-0" ref={mainRef23}>
           <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
             <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
@@ -472,7 +496,7 @@ function MainPage() {
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[140px] ml-[315px] " >
+        <div className="flex mt-[140px] ml-[315px]">
           <div className="font-normal leading-none opacity-0" ref={mainRef2}>
             <p className="text-[85px]">3+</p>
             <p className="text-[18px] text-[rgb(82,_82,_82)]">Years of experiance</p>
