@@ -3,13 +3,10 @@ import Header from './accesories/header';
 import Footer from './accesories/footer';
 
 function Contact() {
-    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const mainRef = useRef(null); // Create a reference to the main section
-
+    const mainRef = useRef(null);
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -19,10 +16,8 @@ function Contact() {
                     }
                 });
             },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
+            { threshold: 0.1 }
         );
-
-        // Observe the target element
         if (mainRef.current) {
             observer.observe(mainRef.current);
         }
@@ -70,10 +65,7 @@ function Contact() {
                             className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] pl-[18px] pt-[20px] w-[560px] h-[100px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         ></textarea>
-                        <button
-                            type="submit"
-                            className="bg-black mt-[50px] px-[50px] py-[15px] text-white text-[20px] font-bold rounded-[4px] transition-all duration-800 hover:bg-[#ee64ff]"
-                        >
+                        <button type="submit" className="bg-black mt-[50px] px-[50px] py-[15px] text-white text-[20px] font-bold rounded-[4px] transition-all duration-800 hover:bg-[#ee64ff]">
                             SUBMIT
                         </button>
                     </form>

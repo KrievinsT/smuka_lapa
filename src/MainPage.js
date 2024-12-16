@@ -1,4 +1,3 @@
-import './styles/App.css';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Header from './accesories/header';
 import Footer from './accesories/footer';
@@ -8,9 +7,7 @@ import DiskPlayer from './img/DiskPlayer.png';
 import PurpleTape from './img/PurpleTape.png';
 import SportsCar from './img/SportsCar.png';
 
-
 function MainPage() {
-
   const mainRef1 = useRef(null);
   const mainRef2 = useRef(null);
   const mainRef3 = useRef(null);
@@ -38,7 +35,7 @@ function MainPage() {
   const mainRef89 = useRef(null);
   const mainRef90 = useRef(null);
   const imagesContainerRef = useRef(null);
-  const imageRef = useRef(null); // Reference for the animated image
+  const imageRef = useRef(null); 
 
   useEffect(() => {
     if (imageRef.current) {
@@ -56,7 +53,6 @@ function MainPage() {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // Limit movement to within 20px
         setOffset({
             x: Math.min(20, Math.max(-20, x / 15)),
             y: Math.min(20, Math.max(-20, y / 15)),
@@ -185,7 +181,7 @@ function MainPage() {
     observer.observe(element);
 
     return () => {
-      observer.disconnect(); // Cleanup observer when the component unmounts
+      observer.disconnect(); 
     };
   }, []);
 

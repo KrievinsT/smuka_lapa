@@ -1,6 +1,6 @@
 import Header from './accesories/header';
 import Footer from './accesories/footer';
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect} from 'react';
 import SportsCar_2  from './img/SportsCar_2.png';
 import SportsCar_3  from './img/SportsCar_3.png';
 import SportsCar_4  from './img/SportsCar_4.png';
@@ -10,13 +10,10 @@ import SportsCar_7  from './img/SportsCar_7.png';
 import SportsCar_8  from './img/SportsCar_8.png';
 
 function SportsCar() {
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
     useEffect(() => {
-        // Observer for image overlays
         const imageObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -30,11 +27,9 @@ function SportsCar() {
           },
           { threshold: 0.1 }
         );
-    
         const imageContainers = document.querySelectorAll('.image-container');
         imageContainers.forEach((container) => imageObserver.observe(container));
     
-        // Observer for text blocks
         const textObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -45,7 +40,6 @@ function SportsCar() {
           },
           { threshold: 0.1 }
         );
-    
         const textBlocks = document.querySelectorAll('.text-block');
         textBlocks.forEach((block) => textObserver.observe(block));
     
@@ -54,8 +48,6 @@ function SportsCar() {
           textBlocks.forEach((block) => textObserver.unobserve(block));
         };
       }, []);
-    
-    
     
     return (
         <div className="flex flex-col min-h-screen">

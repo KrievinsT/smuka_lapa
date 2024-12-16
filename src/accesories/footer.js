@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import logo from '../img/logo.png';
 
 function Footer() {
-  const mainRef = useRef(null); // Reference for the footer content
-  const logoRef = useRef(null); // Reference for the logo
+  const mainRef = useRef(null); 
+  const logoRef = useRef(null); 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -11,20 +11,17 @@ function Footer() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             if (entry.target === logoRef.current) {
-              // Apply grow animation to the logo
               entry.target.classList.add('animate-grow');
             }
             if (entry.target === mainRef.current) {
-              // Apply fadeSlideUp animation to the footer content
               entry.target.classList.add('animate-fadeSlideUp');
             }
           }
         });
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 } 
     );
 
-    // Observe both logo and footer content
     if (logoRef.current) observer.observe(logoRef.current);
     if (mainRef.current) observer.observe(mainRef.current);
 
@@ -37,17 +34,15 @@ function Footer() {
   return (
     <div>
       <footer className="w-full pt-[160px] px-[0] pb-[48px] h-auto flex justify-center flex-wrap">
-        {/* Logo Section */}
         <div
-          className="w-full flex justify-center opacity-0" // Hidden initially
+          className="w-full flex justify-center opacity-0" 
           ref={logoRef}
         >
           <img src={logo} alt="Logo" className="logo-animation" />
         </div>
 
-        {/* Rest of the Footer Content */}
         <div
-          className="opacity-0 w-full" // Hidden initially
+          className="opacity-0 w-full" 
           ref={mainRef}
         >
           <div className="flex justify-center mt-[50px] space-x-[30px]">
