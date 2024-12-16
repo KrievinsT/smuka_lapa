@@ -59,12 +59,7 @@ code {
   transition: transform 4s ease;
 }
 
-.image-container {
-  position: relative;
-  width: 300px; /* Adjust as needed */
-  height: 400px; /* Adjust as needed */
-  perspective: 1000px;
-}
+
 
 .image {
   position: absolute;
