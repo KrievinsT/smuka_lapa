@@ -2,7 +2,7 @@
 module.exports = {
   
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./src/**/*.{js,jsx,ts,tsx,html}", 
   ],
   safelist: ['animate-fadeIn', 'opacity-0'],
   theme: {
@@ -42,10 +42,6 @@ module.exports = {
           '0%': { transform: 'scale(0)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
         squishReveal: {
           '0%': { transform: 'scaleX(0)', opacity: '0' }, // Fully squished and invisible
           '100%': { transform: 'scaleX(1)', opacity: '1' }, // Fully revealed
@@ -69,7 +65,6 @@ module.exports = {
         slideDownAndFadeOut: 'slideDownAndFadeOut 0.3s ease-out forwards',
         fadeIn: 'fadeIn 0.3s ease-out forwards',
         grow: 'growIn 0.5s ease-out forwards',
-        marquee: 'marquee linear infinite',
         squishReveal: 'squishReveal 0.5s ease-out forwards',
         dropIn: 'dropIn 0.6s ease-out',
         riseAndShrink: 'riseAndShrink 0.8s ease-in-out forwards',
