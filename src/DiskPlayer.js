@@ -1,6 +1,6 @@
 import Header from './accesories/header';
 import Footer from './accesories/footer';
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect} from 'react';
 import DiskPlayer_2  from './img/DiskPlayer_2.png';
 import DiskPlayer_3  from './img/DiskPlayer_3.png';
 import DiskPlayer_4  from './img/DiskPlayer_4.png';
@@ -10,13 +10,10 @@ import DiskPlayer_7  from './img/DiskPlayer_7.png';
 import DiskPlayer_8  from './img/DiskPlayer_8.png';
 
 function DiskPlayer() {
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
     useEffect(() => {
-        // Observer for image overlays
         const imageObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -30,11 +27,8 @@ function DiskPlayer() {
           },
           { threshold: 0.1 }
         );
-    
         const imageContainers = document.querySelectorAll('.image-container');
         imageContainers.forEach((container) => imageObserver.observe(container));
-    
-        // Observer for text blocks
         const textObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -45,17 +39,13 @@ function DiskPlayer() {
           },
           { threshold: 0.1 }
         );
-    
         const textBlocks = document.querySelectorAll('.text-block');
         textBlocks.forEach((block) => textObserver.observe(block));
-    
         return () => {
           imageContainers.forEach((container) => imageObserver.unobserve(container));
           textBlocks.forEach((block) => textObserver.unobserve(block));
         };
       }, []);
-    
-    
     
     return (
         <div className="flex flex-col min-h-screen">
@@ -114,5 +104,4 @@ function DiskPlayer() {
         </div>
     );
 }
-
 export default DiskPlayer;
