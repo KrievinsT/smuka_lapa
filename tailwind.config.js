@@ -50,6 +50,15 @@ module.exports = {
           '0%': { transform: 'scaleX(0)', opacity: '0' }, // Fully squished and invisible
           '100%': { transform: 'scaleX(1)', opacity: '1' }, // Fully revealed
         },
+        dropIn: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '80%': { transform: 'translateY(10%)', opacity: '1' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        riseAndShrink: {
+          '0%': { transform: 'translateY(200px) scale(1.3)', opacity: '0' },
+          '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+        },
         
       },
       animation: {
@@ -62,6 +71,8 @@ module.exports = {
         grow: 'growIn 0.5s ease-out forwards',
         marquee: 'marquee linear infinite',
         squishReveal: 'squishReveal 0.5s ease-out forwards',
+        dropIn: 'dropIn 0.6s ease-out',
+        riseAndShrink: 'riseAndShrink 0.8s ease-in-out forwards',
       },
     },
   },
