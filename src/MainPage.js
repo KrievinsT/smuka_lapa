@@ -472,22 +472,23 @@ function MainPage() {
           <div className="w-[280px]">
             <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="ml-[910px] h-auto w-auto border-b relative border-[lightgray] cursor-pointer" style={{ position: 'relative' }}>
-            <div className="border-b border-[black] w-[48px] mt-1 transition-all duration-1000 hover:w-[160px]" style={{ position: 'relative' }}>
-              <a className="text-[16px] z-[33]" style={{ position: 'relative' }}>contact@sandbox.com</a>
+          <div className="ml-[910px] h-auto w-auto cursor-pointer">
+            <div className="border-b border-[black] w-[48px] transition-all pt-[22px] duration-1000 hover:w-[160px]">
+              <a className="text-[16px] ">contact@sandbox.com</a>
             </div>
+            <div className="h-auto w-[160px] border-b border-[lightgray]"></div>
           </div>
         </div>
-        <div className="overflow-x-hidden h-[300px] mt-[-30px] flex z-[-30] opacity-0" ref={mainRef23}>
-          <div className="animate-marquee flex items-center justify-start [animation-duration:5s]">
-            <p className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</p>
+        <div className="marquee opacity-0" ref={mainRef23}>
+          <div className="track items-center">
+            <span className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</span>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
-            <p className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</p>
+            <span className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</span>
             <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
           </div>
         </div>
         <div>
-          <h2 className="text-center text-[54px] mt-[120px] px-[140px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
+          <h2 className="text-center text-[54px] mt-[180px] px-[140px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
             Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
             <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
