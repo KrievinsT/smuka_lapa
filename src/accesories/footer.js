@@ -33,7 +33,7 @@ function Footer() {
 
   return (
     <div>
-      <footer className="w-full pt-[160px] px-[0] pb-[48px] h-auto flex justify-center flex-wrap">
+      <footer className="w-full pt-[100px] sm:pt-[160px] px-[0] pb-[48px] h-auto flex justify-center flex-wrap">
         <div
           className="w-full flex justify-center opacity-0" 
           ref={logoRef}
@@ -45,7 +45,7 @@ function Footer() {
           className="opacity-0 w-full" 
           ref={mainRef}
         >
-          <div className="flex justify-center mt-[50px] space-x-[30px]">
+          <div className="flex justify-center mt-[30px] sm:mt-[50px] space-x-[30px]">
             <div className="rounded-[50%] transition-all duration-400 cursor-pointer hover:bg-[#ee64ff] hover:mt-[-1px]">
               <img
                 className="w-[42px] h-[42px] p-[10px]"
@@ -75,7 +75,7 @@ function Footer() {
               />
             </div>
           </div>
-          <div className="mt-[90px] text-[18px] w-full flex justify-center">
+          <div className="mt-[60px] sm:mt-[90px] text-[18px] w-full flex justify-center">
             <a
               href=""
               className="no-underline [transition:all_.25s] mr-[18px] hover:text-[grey] hover:mt-[-5px]"
@@ -91,21 +91,21 @@ function Footer() {
             </a>
           </div>
           <div className="mt-[16px] text-[18px] text-center">
-            <p>
-              Copyright ©
+            <p className="sm:flex justify-center">
+              <div>Copyright ©</div>
               <a
                 href="https://webflow.com/templates/designers/lucas-gusso"
                 className="no-underline [transition:all_.25s] ml-[16px] mr-[10px] hover:text-[#b4b3b3]"
               >
-                <span className="text-[gray] no-underline [transition:all_.25s] hover:text-[#b4b3b3]">
-                  Design & Developed by </span>Lucas Gusso
+                <div><span className="text-[gray] no-underline [transition:all_.25s] hover:text-[#b4b3b3]">
+                  Design & Developed by </span>Lucas Gusso</div>
               </a>
               <a
                 href="https://webflow.com/"
                 className="no-underline [transition:all_.25s] mr-[10px] hover:text-[#b4b3b3]"
               >
-                <span className="text-[gray] no-underline [transition:all_.25s] hover:text-[#b4b3b3]">
-                  Powered by </span>Webflow
+                <div><span className="text-[gray] no-underline [transition:all_.25s] hover:text-[#b4b3b3]">
+                  Powered by </span>Webflow</div>
               </a>
             </p>
           </div>

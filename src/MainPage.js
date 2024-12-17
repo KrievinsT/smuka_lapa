@@ -12,6 +12,8 @@ function MainPage() {
   const mainRef2 = useRef(null);
   const mainRef3 = useRef(null);
   const mainRef4 = useRef(null);
+  const mainRef52 = useRef(null);
+  const mainRef53 = useRef(null);
   const mainRef5 = useRef(null);
   const mainRef6 = useRef(null);
   const mainRef7 = useRef(null);
@@ -248,7 +250,21 @@ function MainPage() {
       return cleanupObserver5;
     }
   }, [observeElement]);
+
+  useEffect(() => {
+    if (mainRef52.current) {
+      const cleanupObserver52 = observeElement(mainRef52.current);
+      return cleanupObserver52;
+    }
+  }, [observeElement]);
   
+  useEffect(() => {
+    if (mainRef53.current) {
+      const cleanupObserver53 = observeElement(mainRef53.current);
+      return cleanupObserver53;
+    }
+  }, [observeElement]);
+
   useEffect(() => {
     if (mainRef6.current) {
       const cleanupObserver6 = observeElement(mainRef6.current);
@@ -446,16 +462,16 @@ function MainPage() {
       <Header />
       <main>
         <div className="flex justify-center opacity-0 animate-fadeSlideUpShort delay-300">
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
-            <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
-            <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
+          <div className="bg-[#ee64ff] rounded-[50%] w-[8px] hidden sm:block h-[8px] mt-[29px] mr-[0.8%]"></div>
+          <h2 className="text-center mt-[1.2%] text-[100%] sm:text-[115%]">WE ARE SANDBOX</h2>
+          <div className="bg-[#ee64ff] rounded-[50%] w-[8px] hidden sm:block h-[8px] mt-[29px] ml-[0.8%]"></div>
         </div>
         <div className="z-40 absolute w-full text-center px-[20%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
-            <h1 className="text-[510%] leading-none">Elevate your brand with creative solutions</h1>
+            <h1 className="text-[240%] sm:text-[510%] font-normal leading-none">Elevate your brand with creative solutions</h1>
         </div>
-        <div className="w-[24%] relative ml-[38%] mt-[160px]" ref={imagesContainerRef}>
+        <div className="sm:w-[24%] w-[50%] relative sm:ml-[38%] ml-[25%] sm:mt-[160px] mt-[190px]" ref={imagesContainerRef}>
             <div className="absolute z-[31] z-31" >
-              <img className="rounded-[10px] animate-riseAndShrink opacity-0" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
+              <img className="rounded-[10px] animate-riseAndShrink opacity-0 " src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"/>
             </div>
             <div className="absolute z-[32] z-32">
               <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:0.5s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"/>
@@ -464,66 +480,66 @@ function MainPage() {
               <img className="rounded-[10px] animate-riseAndShrink opacity-0 [animation-delay:1s]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"/>
             </div>
         </div>
-        <div className="flex pl-[70px] mt-[280px] opacity-0" ref={mainRef22}>
-          <div className="w-[280px]">
-            <p className="text-[gray]" >WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
+        <div className="sm:flex sm:pl-[70px] mt-[500px] sm:mt-[280px] opacity-0" ref={mainRef22}>
+          <div className="sm:w-[280px] w-[75%] ml-[12.5%] sm:ml-0">
+            <p className="text-[gray] sm:text-left text-center">WHERE IMAGINATION MEETS STRATEGY TO IMPACTFUL RESULTS</p>
           </div>
-          <div className="ml-[910px] h-auto w-auto cursor-pointer">
-            <div className="border-b border-[black] w-[48px] transition-all pt-[22px] duration-1000 hover:w-[160px]">
-              <a className="text-[16px] ">contact@sandbox.com</a>
+          <div className="sm:ml-[910px] h-auto w-auto cursor-pointer">
+            <div className="border-b border-[black] sm:w-[48px] w-[43%] ml-[28.5%] sm:ml-0 transition-all pt-[22px] duration-1000 hover:w-[160px]">
+              <a className="text-[16px] sm:text-left text-center">contact@sandbox.com</a>
             </div>
-            <div className="h-auto w-[160px] border-b border-[lightgray]"></div>
+            <div className="h-auto sm:w-[160px] w-[43%] border-b border-[lightgray]"></div>
           </div>
         </div>
-        <div className="marquee opacity-0" ref={mainRef23}>
+        <div className="marquee sm:h-[280px] h-[180px] opacity-0 sm:mt-0 mt-[50px]" ref={mainRef23}>
           <div className="track items-center">
-            <span className="text-[1500%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</span>
-            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
-            <span className="text-[1500%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</span>
-            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] ml-[100px] mr-[100px]"></div>
+            <span className="sm:text-[1500%] text-[750%] leading-none whitespace-nowrap font-light ">CREATIVE AGENCY</span>
+            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] sm:ml-[100px] sm:mr-[100px] ml-[70px] mr-[70px]"></div>
+            <span className="sm:text-[1500%] text-[750%] leading-none whitespace-nowrap font-light">CREATIVE AGENCY</span>
+            <div className="bg-[#ee64ff] rounded-full w-[1em] h-[1em] sm:ml-[100px] sm:mr-[100px] ml-[70px] mr-[70px]"></div>
           </div>
         </div>
         <div>
-          <h2 className="text-center text-[54px] mt-[180px] px-[140px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
-            Elevate your digital<img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
+          <h2 className="text-center sm:text-[54px] text-[35px] sm:mt-[180px] mt-[10px] sm:px-[140px] px-[20px] py-0 font-normal leading-none opacity-0" ref={mainRef1}>
+            Elevate your digital<img className="rounded-[50px] inline-block align-middle sm:w-[110px] w-[70px] sm:mr-[20px] sm:ml-[20px] mr-[10px] ml-[10px] sm:mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef88} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24cc8_Text%20Images%2001.jpg" alt="SnowWoman " />
             presence with distinction, immerse in boundless creativity. Our team of 
-            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
+            <img className="rounded-[50px] inline-block align-middle sm:w-[110px] w-[70px] sm:mr-[20px] sm:ml-[20px] mr-[10px] ml-[10px] sm:mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef89} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97cc6142aa5d1e24c70_Text%20Images%2002.jpg" alt="car " />
             designers and development trailblazers ignites your 
-            <img className="rounded-[50px] inline-block align-middle w-[110px] mr-[20px] ml-[20px] mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef90} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24c9b_Text%20Images%2003.jpg" alt="astronaut " />
+            <img className="rounded-[50px] inline-block align-middle sm:w-[110px] w-[70px] sm:mr-[20px] sm:ml-[20px] mr-[10px] ml-[10px] sm:mt-[-20px] h-auto mx-2 opacity-0" ref={mainRef90} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a97dc6142aa5d1e24c9b_Text%20Images%2003.jpg" alt="astronaut " />
             digital vision
           </h2>
         </div>
-        <div className="flex mt-[140px] ml-[315px]">
-          <div className="font-normal leading-none opacity-0" ref={mainRef2}>
+        <div className="sm:flex sm:mt-[140px] mt-[50px] sm:text-left text-center sm:ml-[315px] ml-[10px]">
+          <div className="font-normal sm:mt-0 mt-[30px] leading-none opacity-0" ref={mainRef2}>
             <p className="text-[85px]">3+</p>
             <p className="text-[18px] text-[rgb(82,_82,_82)]">Years of experiance</p>
           </div>
-          <div className="font-normal leading-none ml-[190px] [animation-delay:0.1s] opacity-0" ref={mainRef20}>
+          <div className="font-normal sm:mt-0 mt-[30px] leading-none sm:ml-[190px] ml-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef20}>
             <p className="text-[85px] leading-none">40+</p>
             <p className="text-[18px] text-[rgb(82,_82,_82)]">Satisfied clients</p>
           </div>
-          <div className="font-normal leading-none ml-[190px] [animation-delay:0.2s] opacity-0" ref={mainRef21}>
+          <div className="font-normal sm:mt-0 mt-[30px] leading-none sm:ml-[190px] ml-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef21}>
             <p className="text-[85px] leading-none">100+</p>
             <p className="text-[18px] text-[rgb(82,_82,_82)]">Projects delivered</p>
           </div>
         </div>
         <div>
-          <div className="flex mt-[140px] opacity-0" ref={mainRef3}>
-            <div className="bg-[white] w-[28.5%] h-[600px] ml-[5.5%]">
+          <div className="sm:flex sm:mt-[140px] mt-[40px] opacity-0" ref={mainRef3}>
+            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[5.5%] ml-[5%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Transform your business identity through expert branding strategies</h2>
                 <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p></div>
                 <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">01</p>
               </div>
             </div>
-            <div className="bg-[white] w-[28.5%] h-[600px] ml-[2%]">
+            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[2%] ml-[5%]">
               <div className="pt-[80px] pl-[60px] pr-[60px]">
                 <h2 className="text-[26px]">Unlock innovative web solutions with cutting-edge development</h2>
                 <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p></div>
                 <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">02</p>
               </div>
             </div>
-            <div className="bg-[white] w-[28.5%] h-[600px] ml-[2%]">
+            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[2%] ml-[5%]">
               <div className="pt-[80px] pl-[60px] pr-[56px]">
                 <h2 className="text-[26px]">Design intuitive user interfaces for exceptional user experiences</h2>
                 <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">We create user-centered designs that enhance engagement and usability</p></div>
@@ -533,7 +549,7 @@ function MainPage() {
           </div>
           <div className="flex justify-center">
           <Link to="/contact">
-            <button type="submit" className="bg-black mt-[100px] px-[50px] py-[15px] text-white text-[20px] rounded-[4px] transition-all duration-250 hover:bg-[#ee64ff]">
+            <button type="submit" className="bg-black mt-[100px] sm:px-[50px] px-[90px] sm:py-[15px] py-[12px] text-white text-[20px] rounded-[4px] transition-all duration-250 hover:bg-[#ee64ff]">
               GET STARTED
             </button>
           </Link>
@@ -541,14 +557,14 @@ function MainPage() {
         </div>
         <div>
           <div>
-            <div className="mt-[220px] text-center opacity-0" ref={mainRef4}>
-              <h2 className="text-[60px] font-bold px-[430px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
-              <p className="text-[18px] mt-[20px] px-[470px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
+            <div className="sm:mt-[220px] mt-[60px] text-center opacity-0" ref={mainRef4}>
+              <h2 className="sm:text-[60px] text-[35px] font-bold sm:px-[430px] px-[25px] py-0 font-normal leading-none">Showcasing creative and impactful solutions</h2>
+              <p className="sm:text-[18px] text-[16px] mt-[20px] sm:px-[470px] px-[25px] py-0 text-[rgb(82,_82,_82)]">Explore our work to see the transformative power of creative solutions and envision what we can accomplish together.</p>
             </div>
             <div className="p-[0]">
-                    <div className="flex mt-[100px] w-[100%] opacity-0" ref={mainRef5}>
-                    <Link to="/Astronaut" className="w-[49%]">
-                            <div className="bg-[white]  ml-[5%] h-auto pb-[40px] rounded-[10px]">
+            <div className="sm:flex sm:mt-[100px] mt-[30px] sm:w-[100%] w-[94%] " >
+                        <Link to="/Astronaut" className="w-[49%]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef5}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset1)}
@@ -565,17 +581,17 @@ function MainPage() {
                                             transform: `translate(${offset1.x}px, ${offset1.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
+                                <div className="pl-[30px] pt-[20px] sm:flex">
                                     <div className="w-[30%]">
-                                        <p className="text-[19px]">GRO-OP</p>
+                                        <p className="sm:text-[19px] text-[16px]">GRO-OP</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Focused on sustainable growth strategies, empowering businesses to thrive through innovation.
                                         </p>
                                     </div>
@@ -584,7 +600,7 @@ function MainPage() {
                         </Link>
 
                         <Link to="/SportsCar" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px] sm:mt-0 mt-[30px] opacity-0" ref={mainRef52}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset2)}
@@ -601,17 +617,17 @@ function MainPage() {
                                             transform: `translate(${offset2.x}px, ${offset2.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
-                                    <div className="w-[30%]">
-                                        <p className="text-[19px]">Journey of Objects</p>
+                                <div className="pl-[30px] pt-[20px] sm:flex">
+                                    <div className="sm:w-[30%]">
+                                        <p className="sm:text-[19px] text-[16px]">Journey of Objects</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Showcasing the evolution of everyday items through a creative and minimalist lens.
                                         </p>
                                     </div>
@@ -619,9 +635,9 @@ function MainPage() {
                             </div>
                         </Link>
                     </div>
-                    <div className="flex mt-[50px] opacity-0" ref={mainRef6}>
-                    <Link to="/PurpleTape" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                    <div className="sm:flex mt-[30px] sm:mt-[100px] sm:w-[100%] w-[94%]" >
+                        <Link to="/PurpleTape" className="w-[49%]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef6}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset3)}
@@ -638,17 +654,17 @@ function MainPage() {
                                             transform: `translate(${offset3.x}px, ${offset3.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
+                                <div className="pl-[30px] pt-[20px] sm:flex">
                                     <div className="w-[30%]">
-                                        <p className="text-[19px]">Steeezy</p>
+                                        <p className="sm:text-[19px] text-[16px]">Steeezy</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.
                                         </p>
                                     </div>
@@ -656,8 +672,8 @@ function MainPage() {
                             </div>
                         </Link>
 
-                        <Link to="/DiskPlayer" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                        <Link to="/DiskPlayer" className="w-[49%] ">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] sm:mt-0 mt-[30px] rounded-[10px] opacity-0" ref={mainRef53}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset4)}
@@ -674,17 +690,17 @@ function MainPage() {
                                             transform: `translate(${offset4.x}px, ${offset4.y}px)`,
                                         }}
                                     >
-                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-3xl rounded-full text-center flex items-center justify-center">
+                                        <div className="w-44 h-44 bg-[lightgray] backdrop-blur-[10px] rounded-full text-center flex items-center justify-center">
                                             <p className="font-bold">View Project</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
-                                    <div className="w-[30%]">
-                                        <p className="text-[19px]">Art Not Evidence</p>
+                                <div className="pl-[30px] pt-[20px] sm:flex">
+                                    <div className="sm:w-[30%]">
+                                        <p className="sm:text-[19px] text-[16px]">Art Not Evidence</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Challenging the boundaries between artistic expression and factual representation
                                         </p>
                                     </div>
