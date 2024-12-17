@@ -524,32 +524,32 @@ function MainPage() {
           </div>
         </div>
         <div>
-          <div className="sm:flex sm:mt-[140px] mt-[40px] opacity-0" ref={mainRef3}>
-            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[5.5%] ml-[5%]">
-              <div className="pt-[80px] pl-[60px] pr-[60px]">
-                <h2 className="text-[26px]">Transform your business identity through expert branding strategies</h2>
-                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p></div>
-                <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">01</p>
+          <div className="sm:flex sm:mt-[140px] mt-[50px] opacity-0" ref={mainRef3}>
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:ml-[5.5%] ml-[8%]">
+              <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
+                <h2 className="sm:text-[26px] text-[23px]">Transform your business identity through expert branding strategies</h2>
+                <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p></div>
+                <p className="sm:text-[185px] text-[130px] text-[lightgray] mt-[4px] sm:ml-[4px] transition-all duration-1000 hover:text-[black]">01</p>
               </div>
             </div>
-            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[2%] ml-[5%]">
-              <div className="pt-[80px] pl-[60px] pr-[60px]">
-                <h2 className="text-[26px]">Unlock innovative web solutions with cutting-edge development</h2>
-                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p></div>
-                <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">02</p>
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[8%]">
+              <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
+                <h2 className="sm:text-[26px] text-[23px]">Unlock innovative web solutions with cutting-edge development</h2>
+                <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p></div>
+                <p className="sm:text-[185px] text-[130px] text-[lightgray] mt-[4px] sm:ml-[4px] transition-all duration-1000 hover:text-[black]">02</p>
               </div>
             </div>
-            <div className="bg-[white] sm:w-[28.5%] w-[90%] h-[600px] sm:ml-[2%] ml-[5%]">
-              <div className="pt-[80px] pl-[60px] pr-[56px]">
-                <h2 className="text-[26px]">Design intuitive user interfaces for exceptional user experiences</h2>
-                <div className="h-[80px]"><p className="mt-[20px] text-[14px] text-[gray]">We create user-centered designs that enhance engagement and usability</p></div>
-                <p className="text-[185px] text-[lightgray] mt-[4px] ml-[4px] transition-all duration-1000 hover:text-[black]">03</p>
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[8%]">
+              <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
+                <h2 className="sm:text-[26px] text-[23px]">Design intuitive user interfaces for exceptional user experiences</h2>
+                <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">We create user-centered designs that enhance engagement and usability</p></div>
+                <p className="sm:text-[185px] text-[130px] text-[lightgray] mt-[4px] sm:ml-[4px] transition-all duration-1000 hover:text-[black]">03</p>
               </div>
             </div>
           </div>
           <div className="flex justify-center">
           <Link to="/contact">
-            <button type="submit" className="bg-black mt-[100px] sm:px-[50px] px-[90px] sm:py-[15px] py-[12px] text-white text-[20px] rounded-[4px] transition-all duration-250 hover:bg-[#ee64ff]">
+            <button type="submit" className="bg-black sm:mt-[100px] mt-[20px] sm:px-[50px] px-[90px] sm:py-[15px] py-[12px] text-white text-[20px] rounded-[4px] transition-all duration-250 hover:bg-[#ee64ff]">
               GET STARTED
             </button>
           </Link>
