@@ -10,6 +10,8 @@ import SportsCar from './img/SportsCar.png';
 function Portfolio() {
     const mainRef = useRef(null);
     const mainRef2 = useRef(null);
+    const mainRef3 = useRef(null);
+    const mainRef4 = useRef(null);
 
     const [offset1, setOffset1] = useState({ x: 0, y: 0 });
     const [offset2, setOffset2] = useState({ x: 0, y: 0 });
@@ -74,22 +76,63 @@ function Portfolio() {
         };
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeSlideUp');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (mainRef3.current) {
+            observer.observe(mainRef3.current);
+        }
+
+        return () => {
+            if (mainRef3.current) observer.unobserve(mainRef3.current);
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeSlideUp');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (mainRef4.current) {
+            observer.observe(mainRef4.current);
+        }
+
+        return () => {
+            if (mainRef4.current) observer.unobserve(mainRef4.current);
+        };
+    }, []);
     return (
         <div>
             <Header />
             <main>
                 <div className="flex justify-center opacity-0 animate-fadeSlideUp delay-300">
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] mr-[0.8%]"></div>
-                    <h2 className="text-center mt-[1.2%] text-[115%]">WE ARE SANDBOX</h2>
-                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] h-[8px] mt-[29px] ml-[0.8%]"></div>
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] hidden sm:block h-[8px] mt-[29px] mr-[0.8%]"></div>
+                    <h2 className="text-center mt-[1.2%] text-[100%] sm:text-[115%]">WE ARE SANDBOX</h2>
+                    <div className="bg-[#ee64ff] rounded-[50%] w-[8px] hidden sm:block h-[8px] mt-[29px] ml-[0.8%]"></div>
                 </div>
-                <div className="w-full text-center px-[28%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
-                    <h1 className="text-[460%] leading-none">Where vision meets excellence</h1>
+                <div className="w-full text-center px-[13%] sm:px-[28%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
+                    <h1 className="text-[240%] sm:text-[570%] font-normal leading-none">Where vision meets excellence</h1>
                 </div>
                 <div>
-                    <div className="flex mt-[100px] w-[100%] opacity-0 animate-fadeSlideUp delay-300" ref={mainRef}>
+                    <div className="sm:flex mt-[100px] sm:w-[100%] w-[94%] " >
                         <Link to="/Astronaut" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset1)}
@@ -111,12 +154,12 @@ function Portfolio() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
+                                <div className="pl-[30px] pt-[20px] sm:flex">
                                     <div className="w-[30%]">
-                                        <p className="text-[19px]">GRO-OP</p>
+                                        <p className="sm:text-[19px] text-[16px]">GRO-OP</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Focused on sustainable growth strategies, empowering businesses to thrive through innovation.
                                         </p>
                                     </div>
@@ -125,7 +168,7 @@ function Portfolio() {
                         </Link>
 
                         <Link to="/SportsCar" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px] sm:mt-0 mt-[30px] opacity-0" ref={mainRef3}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset2)}
@@ -147,12 +190,12 @@ function Portfolio() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
-                                    <div className="w-[30%]">
-                                        <p className="text-[19px]">Journey of Objects</p>
+                                <div className="pl-[30px] pt-[20px] sm:flex">
+                                    <div className="sm:w-[30%]">
+                                        <p className="sm:text-[19px] text-[16px]">Journey of Objects</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Showcasing the evolution of everyday items through a creative and minimalist lens.
                                         </p>
                                     </div>
@@ -160,9 +203,9 @@ function Portfolio() {
                             </div>
                         </Link>
                         </div>
-                        <div className="flex mt-[100px] w-[100%] opacity-0" ref={mainRef2}>
+                        <div className="sm:flex mt-[30px] sm:mt-[100px] sm:w-[100%] w-[94%]" >
                         <Link to="/PurpleTape" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef2}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset3)}
@@ -184,12 +227,12 @@ function Portfolio() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
+                                <div className="pl-[30px] pt-[20px] sm:flex">
                                     <div className="w-[30%]">
-                                        <p className="text-[19px]">Steeezy</p>
+                                        <p className="sm:text-[19px] text-[16px]">Steeezy</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Steeezy redefines the intersection of fashion and digital experiences with sleek, modern aesthetics.
                                         </p>
                                     </div>
@@ -197,8 +240,8 @@ function Portfolio() {
                             </div>
                         </Link>
 
-                        <Link to="/DiskPlayer" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px]">
+                        <Link to="/DiskPlayer" className="w-[49%] ">
+                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] sm:mt-0 mt-[30px] rounded-[10px] opacity-0" ref={mainRef4}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset4)}
@@ -220,12 +263,12 @@ function Portfolio() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pl-[30px] pt-[20px] flex">
-                                    <div className="w-[30%]">
-                                        <p className="text-[19px]">Art Not Evidence</p>
+                                <div className="pl-[30px] pt-[20px] sm:flex">
+                                    <div className="sm:w-[30%]">
+                                        <p className="sm:text-[19px] text-[16px]">Art Not Evidence</p>
                                     </div>
-                                    <div className="w-[50%] ml-[15%]">
-                                        <p className="text-[14px] text-[gray]">
+                                    <div className="sm:w-[50%] sm:ml-[15%] sm:mt-0 mt-[20px]">
+                                        <p className="sm:text-[14px] text-[15px] text-[gray]">
                                             Challenging the boundaries between artistic expression and factual representation
                                         </p>
                                     </div>
