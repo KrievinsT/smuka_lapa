@@ -525,21 +525,21 @@ function MainPage() {
         </div>
         <div>
           <div className="sm:flex sm:mt-[140px] mt-[50px] opacity-0" ref={mainRef3}>
-            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:ml-[5.5%] ml-[8%]">
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:ml-[5.5%] ml-[9%]">
               <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
                 <h2 className="sm:text-[26px] text-[23px]">Transform your business identity through expert branding strategies</h2>
                 <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">Elevate your brand’s presence with tailored solutions that resonate with your brand</p></div>
                 <p className="sm:text-[185px] text-[130px] text-[lightgray] mt-[4px] sm:ml-[4px] transition-all duration-1000 hover:text-[black]">01</p>
               </div>
             </div>
-            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[8%]">
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[9%]">
               <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
                 <h2 className="sm:text-[26px] text-[23px]">Unlock innovative web solutions with cutting-edge development</h2>
                 <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">Our team crafts seamless digital experiences to drive results and business growth</p></div>
                 <p className="sm:text-[185px] text-[130px] text-[lightgray] mt-[4px] sm:ml-[4px] transition-all duration-1000 hover:text-[black]">02</p>
               </div>
             </div>
-            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[8%]">
+            <div className="bg-[white] sm:w-[28.5%] w-[82%] sm:h-[600px] h-[450px] sm:mt-0 mt-[20px] sm:ml-[2%] ml-[9%]">
               <div className="sm:pt-[80px] pt-[50px] sm:pl-[60px] pl-[30px] sm:pr-[60px] pr-[5px]">
                 <h2 className="sm:text-[26px] text-[23px]">Design intuitive user interfaces for exceptional user experiences</h2>
                 <div className="sm:h-[80px] h-[40px]"><p className="mt-[20px] text-[14px] text-[gray]">We create user-centered designs that enhance engagement and usability</p></div>
@@ -564,7 +564,7 @@ function MainPage() {
             <div className="p-[0]">
             <div className="sm:flex sm:mt-[100px] mt-[30px] sm:w-[100%] w-[94%] " >
                         <Link to="/Astronaut" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef5}>
+                            <div className="bg-[white] h-auto pb-[40px] ml-[7%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef5}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset1)}
@@ -600,7 +600,7 @@ function MainPage() {
                         </Link>
 
                         <Link to="/SportsCar" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] rounded-[10px] sm:mt-0 mt-[30px] opacity-0" ref={mainRef52}>
+                            <div className="bg-[white] h-auto pb-[40px] ml-[7%] sm:ml-[5%] rounded-[10px] sm:mt-0 mt-[30px] opacity-0" ref={mainRef52}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset2)}
@@ -637,7 +637,7 @@ function MainPage() {
                     </div>
                     <div className="sm:flex mt-[30px] sm:mt-[100px] sm:w-[100%] w-[94%]" >
                         <Link to="/PurpleTape" className="w-[49%]">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[6%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef6}>
+                            <div className="bg-[white] h-auto pb-[40px] ml-[7%] sm:ml-[5%] rounded-[10px] opacity-0" ref={mainRef6}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset3)}
@@ -673,7 +673,7 @@ function MainPage() {
                         </Link>
 
                         <Link to="/DiskPlayer" className="w-[49%] ">
-                            <div className="bg-[white] h-auto pb-[40px] ml-[5%] sm:mt-0 mt-[30px] rounded-[10px] opacity-0" ref={mainRef53}>
+                            <div className="bg-[white] h-auto pb-[40px] ml-[7%] sm:ml-[5%] sm:mt-0 mt-[30px] rounded-[10px] opacity-0" ref={mainRef53}>
                                 <div
                                     className="overflow-hidden relative group"
                                     onMouseMove={(e) => handleMouseMove(e, setOffset4)}
@@ -713,49 +713,69 @@ function MainPage() {
         </div>
         <div>
           <div>
-            <h2 className="text-[20px] text-center mt-[150px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
+            <h2 className="text-[20px] text-center sm:mt-[150px] mt-[100px] opacity-0" ref={mainRef7}>TRUSTED BY DESIGN TEAMS AT</h2>
           </div>
           <div>
-            <div className="flex ml-[170px] mt-[50px]">
+            <div className="sm:flex hidden ml-[170px] mt-[50px]">
               <img className="w-[70px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef10} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
               <img className="ml-[130px] w-[220px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef12} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
               <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s] opacity-0" ref={mainRef13} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
               <img className="ml-[160px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef14} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
               <img className="ml-[100px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef15} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
             </div>
-            <div className="flex ml-[130px] mt-[70px]">
+            <div className="sm:flex hidden ml-[130px] mt-[70px]">
               <img className="w-[150px] rounded-tl-[10px] rounded-tr-[10px] opacity-0" ref={mainRef11} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
               <img className="ml-[180px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.1s] opacity-0" ref={mainRef16} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
               <img className="ml-[150px] w-[190px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.2s]  opacity-0" ref={mainRef17} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />
               <img className="ml-[150px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.3s] opacity-0" ref={mainRef18} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee8db6576bccc0c163_Logo%20(8).svg" alt="BrandLogo_9 " />
               <img className="ml-[150px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] [animation-delay:0.4s] opacity-0" ref={mainRef19} src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee4ef06712b61cb996_Logo%20(10).svg" alt="BrandLogo_10 " />
             </div>
+            <div className="flex sm:hidden mt-[70px]">
+              <img className="ml-[50px] w-[70px] rounded-tl-[10px] rounded-tr-[10px]"  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eea96082cb298f4d2f_Logo%20(1).svg" alt="BrandLogo_1 " />
+              <img className="ml-[70px] w-[160px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee6f18a50f9c2e35c5_Logo%20(3).svg" alt="BrandLogo_2 " />
+            </div>
+            <div className="flex sm:hidden mt-[30px]">
+              <img className="ml-[50px] w-[70px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee50a3aec7862e1bfc_Logo%20(5).svg" alt="BrandLogo_3 " />
+              <img className="ml-[70px] w-[160px] rounded-tl-[10px] rounded-tr-[10px]"  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee56fd90d2a8637444_Logo%20(7).svg" alt="BrandLogo_4 " />
+            </div>
+            <div className="flex sm:hidden mt-[30px]">
+              <img className="ml-[20px] w-[150px] rounded-tl-[10px] rounded-tr-[10px]"  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0eed4af88e6a83c1fa5_Logo%20(9).svg" alt="BrandLogo_5 " />
+              <img className="ml-[40px] w-[150px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee91c5cef81eee02c4_Logo%20(2).svg" alt="BrandLogo_6 " />
+            </div>
+            <div className="flex sm:hidden mt-[30px]">
+              <img className="ml-[50px] w-[70px] rounded-tl-[10px] rounded-tr-[10px] "  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee0613a9c7dcaf0b03_Logo%20(4).svg" alt="BrandLogo_7 " />
+              <img className="ml-[70px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] "  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee00cedcbb712bb01e_Logo%20(6).svg" alt="BrandLogo_8 " />
+            </div>
+            <div className="flex sm:hidden mt-[30px]">
+              <img className="ml-[50px] w-[70px] rounded-tl-[10px] rounded-tr-[10px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee8db6576bccc0c163_Logo%20(8).svg" alt="BrandLogo_9 " />
+              <img className="ml-[70px] w-[160px] rounded-tl-[10px] rounded-tr-[10px] "  src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f6c0ee4ef06712b61cb996_Logo%20(10).svg" alt="BrandLogo_10 " />
+            </div>
           </div>
         </div>
         <div>
-          <div className="mt-[210px] text-center opacity-0" ref={mainRef8} >
-            <h2 className="text-[50px] font-bold px-[530px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
-            <p className="text-[12px] mt-[20px] px-[570px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
+          <div className="sm:mt-[210px] mt-[60px] text-center opacity-0" ref={mainRef8} >
+            <h2 className="sm:text-[60px] text-[35px] font-bold sm:px-[430px] px-[25px] py-0 font-normal leading-none">Voices of satisfaction and success</h2>
+            <p className="sm:text-[18px] text-[16px] mt-[20px] sm:px-[470px] px-[25px] py-0 text-[rgb(82,_82,_82)]">We take pride in building lasting partnerships and delivering solutions that exceed expectations.</p>
           </div>
-          <div className="flex justify-center mt-[80px] opacity-0" ref={mainRef9}>
-            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
+          <div className="flex justify-center sm:mt-[80px] mt-[20px] opacity-0" ref={mainRef9}>
+            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer hidden sm:block h-[55px] p-[15px] mt-[170px] mr-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" 
             src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbb8_Left%20Slider%20Arrow.svg" alt="Arrow_left "
             onClick={handlePrev} />
-            <div className="bg-[white] w-[58%] h-[410px] rounded-[14px] overflow-hidden relative shadow-[50px] flex">
+            <div className="bg-[white] sm:w-[58%] w-[84%] sm:h-[410px] h-[700px] rounded-[14px] overflow-hidden relative shadow-[50px] sm:flex">
               <div className={`${isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                <img className=" h-[353px] w-[255px] mt-[30px] ml-[30px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
+                <img className=" sm:h-[353px] h-[285px] sm:w-[255px] w-[285px] sm:mt-[30px] mt-[15px] sm:ml-[30px] ml-[15px] rounded-[10px] object-cover" src={currentTestimonial.image} alt={currentTestimonial.name} />
               </div>
-              <div className="pl-[35px] pt-[60px] w-[540px]">
+              <div className="sm:pl-[35px] pl-[20px] sm:pt-[60px] pt-[30px] sm:w-[540px] w-[280px]">
                 <div  className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
                   <p className="text-[22px] h-[125px]">{currentTestimonial.text}</p>
                 </div>
                 <div className="flex mt-[110px]">
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                    <p className="text-[22px] w-[210px]">{currentTestimonial.name}</p>
-                    <p className="text-[gray] text-[15px] w-[210px]">{currentTestimonial.title}</p>
+                    <p className="text-[22px] sm:w-[210px] w-[180px]">{currentTestimonial.name}</p>
+                    <p className="text-[gray] text-[15px] sm:w-[210px] w-[180px]">{currentTestimonial.title}</p>
                   </div>
                   <div className={` ${ isExiting ? 'animate-slideUpFade' : isEntering ? 'animate-slideInFade' : '' }`}>
-                    <div className="flex ml-[200px] mt-[20px]">
+                    <div className="flex sm:ml-[200px] ml-[10px] mt-[20px]">
                       <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
                       <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
                       <img className=" w-[22px]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c1cff748d7ccf4146b97_Star.svg" alt="star " />
@@ -766,7 +786,7 @@ function MainPage() {
                 </div>
               </div>
             </div>
-            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer h-[55px] p-[15px] mt-[170px] ml-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbf7_Right%20Slider%20Arrow.svg" alt="Arrow_right "  onClick={handleNext}/>   
+            <img className="rounded-[50%] transition-all duration-400 w-[55px] cursor-pointer hidden sm:block h-[55px] p-[15px] mt-[170px] ml-[160px] border-[0.5px] border-[solid] border-[lightgray] hover:bg-[#ee64ff]" src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5c15fdb3c3c74e3cddbf7_Right%20Slider%20Arrow.svg" alt="Arrow_right "  onClick={handleNext}/>   
           </div>
         </div>
       </main>
