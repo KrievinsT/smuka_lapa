@@ -91,7 +91,7 @@ function Footer() {
             </a>
           </div>
           <div className="mt-[16px] text-[18px] text-center">
-            <p className="sm:flex justify-center">
+            <span className="sm:flex justify-center">
               <div>Copyright ©</div>
               <a
                 href="https://webflow.com/templates/designers/lucas-gusso"
@@ -107,7 +107,7 @@ function Footer() {
                 <div><span className="text-[gray] no-underline [transition:all_.25s] hover:text-[#b4b3b3]">
                   Powered by </span>Webflow</div>
               </a>
-            </p>
+            </span>
           </div>
         </div>
       </footer>

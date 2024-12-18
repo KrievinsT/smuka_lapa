@@ -41,7 +41,7 @@ function Contact() {
                 </div>
                 <div className="mt-[70px] sm:mt-[150px] flex justify-center flex-wrap animate-fadeSlideUp delay-300">
                     <form className="flex flex-col items-center w-[80%] sm:w-[90%] max-w-[500px] mb-[50px]">
-                        <label htmlFor="name" className="sm:w-[560px] w-[350px] text-[#151515] text-left">Name</label>
+                        <label htmlFor="name" className="sm:w-[560px] w-[350px] text-[#151515] pl-[6px] sm:pl-0 text-left">Name</label>
                         <input
                             id="name"
                             type="text"
@@ -49,7 +49,7 @@ function Contact() {
                             className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] ml-[-6px] sm:ml-0 sm:pl-[18px] w-[110%] sm:w-[560px] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)] focus:outline-none focus:border-[#000000] "
                             required
                         />
-                        <label htmlFor="email" className="sm:w-[560px] w-[350px] text-[#151515] text-left mt-[26px]">E-mail</label>
+                        <label htmlFor="email" className="sm:w-[560px] w-[350px] text-[#151515] pl-[6px] sm:pl-0 text-left mt-[26px]">E-mail</label>
                         <input
                             type="email"
                             id="email"
@@ -57,7 +57,7 @@ function Contact() {
                             className="mt-[16px] bg-[#efefef] focus:ring-black text-[17px] ml-[-6px] sm:ml-0 sm:pl-[18px] sm:w-[560px] w-[110%] h-[50px] border-t-[#efefef] border-x-[#efefef] border-b-[rgb(205,_205,_205)] transition-all duration-400  hover:pl-[21px] focus:border-[#000000] focus:outline-none hover:border-[1px] hover:border-[solid] hover:border-[rgb(205,_205,_205)]"
                             required
                         />
-                        <label htmlFor="message" className="sm:w-[560px] w-[350px] text-[#151515] text-left mt-[26px]">Message</label>
+                        <label htmlFor="message" className="sm:w-[560px] w-[350px] text-[#151515] pl-[6px] sm:pl-0 text-left mt-[26px]">Message</label>
                         <textarea
                             id="message"
                             type="text"

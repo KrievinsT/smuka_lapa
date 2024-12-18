@@ -57,7 +57,7 @@ function PurpleTape() {
                     <div className="bg-[#ee64ff] rounded-[50%] w-[8px] hidden sm:block h-[8px] mt-[29px] ml-[0.8%]"></div>
                 </div>
                 <div className="w-full text-center px-[15%] py-0 mt-[10px] opacity-0 animate-fadeSlideUp delay-300">
-                    <h1 className="sm:text-[570%] text-[300%] font-normal leading-none">Steezy</h1>
+                    <h1 className="sm:text-[570%] text-[300%] font-normal leading-none">Steeezy</h1>
                 </div>
                 <div className="image-container relative overflow-hidden sm:w-[90%] w-[92%] mx-auto sm:mt-10 rounded-lg">
                     <div className="overlay sm:ml-[4%] ml-[4%] mt-[40px] sm:w-[90%] w-[92%] h-[600px] absolute inset-0 rounded-[20px] bg-[#ee64ff]"></div>
